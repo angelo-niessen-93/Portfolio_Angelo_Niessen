@@ -1,0 +1,78 @@
+@use "../../../tokens" as *;
+@use "../../../mixins" as *;
+
+:host {
+  display: block;
+}
+
+.legal-page {
+  width: 100%;
+  min-height: calc(100vh - 190px);
+  background:
+    radial-gradient(circle at 82% 28%, rgba(8, 98, 85, 0.34) 0%, rgba(0, 0, 0, 0) 48%),
+    linear-gradient(104deg, #1c1c1c 0%, #0f2b29 52%, #0b4a40 100%);
+}
+
+.legal-inner {
+  @include content-limit;
+  padding: 8px 28px 64px;
+}
+
+.legal-content {
+  max-width: 980px;
+  margin: 28px auto 0;
+
+  h1 {
+    margin: 0;
+    color: $color-accent;
+    font-size: clamp(46px, 8vw, 76px);
+    line-height: 1;
+    text-align: center;
+  }
+}
+
+.legal-block {
+  margin-top: 34px;
+  padding: 24px 24px 20px;
+  @include section-card(18px, rgba(61, 207, 182, 0.58));
+
+  h2 {
+    margin: 0 0 12px;
+    color: $color-accent;
+    font-size: 30px;
+  }
+
+  p {
+    margin: 0 0 12px;
+    color: #c9d6d5;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  a {
+    color: $color-accent;
+    text-decoration: none;
+  }
+}
+
+@include respond-md {
+  .legal-inner {
+    padding: 8px 14px 40px;
+  }
+
+  .legal-content {
+    margin-top: 14px;
+  }
+
+  .legal-block {
+    padding: 18px 16px 14px;
+
+    h2 {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+}

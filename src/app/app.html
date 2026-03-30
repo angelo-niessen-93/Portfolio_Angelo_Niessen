@@ -1,0 +1,7 @@
+<div
+  class="page-shell"
+  (mousemove)="onPageMouseMove($event)"
+  [attr.style]="'--cursor-x:' + cursorX + 'px; --cursor-y:' + cursorY + 'px;'"
+>
+  <router-outlet />
+</div>

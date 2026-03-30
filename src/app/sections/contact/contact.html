@@ -1,0 +1,48 @@
+<section class="section" id="contact">
+  <div class="section-inner">
+    <div class="contact-left">
+      <p class="section-label">Contact me</p>
+      <h2>Let's work together</h2>
+
+      <h3>Got a problem to solve?</h3>
+      <p class="lead">
+        I help turn ideas into reliable, user-friendly web experiences. If you need a frontend
+        developer who writes clean code and focuses on real product value, let's connect.
+      </p>
+      <p class="cta-line">Need a Frontend developer? <a href="mailto:contact@angeloniessen.dev">Let's talk!</a></p>
+    </div>
+
+    <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="submitContact()" novalidate>
+      <label class="field">
+        <span>What's your name?</span>
+        <input type="text" formControlName="name" placeholder="Your name goes here" />
+      </label>
+
+      <label class="field">
+        <span>What's your email?</span>
+        <input type="email" formControlName="email" placeholder="youremail@email.com" />
+      </label>
+
+      <label class="field">
+        <span>How can I help you?</span>
+        <textarea
+          formControlName="message"
+          rows="2"
+          placeholder="Hello Angelo, I am interested in..."
+        ></textarea>
+      </label>
+
+      <div class="privacy">
+        <input id="privacy-consent" type="checkbox" formControlName="privacy" aria-label="Accept privacy policy" />
+        <p class="privacy-text">
+          I've read the
+          <a [routerLink]="['/legal-notice']" fragment="privacy-policy">privacy policy</a>
+          and
+          agree to the processing of my data as outlined.
+        </p>
+      </div>
+
+      <button class="btn send-btn" type="submit" [disabled]="contactForm.invalid">Say Hello ;)</button>
+    </form>
+  </div>
+</section>

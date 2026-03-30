@@ -1,0 +1,42 @@
+@use "./tokens" as *;
+
+@mixin hover-focus {
+  &:hover,
+  &:focus-visible {
+    @content;
+  }
+}
+
+@mixin respond-max($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin respond-md {
+  @include respond-max(768px) {
+    @content;
+  }
+}
+
+@mixin respond-lg {
+  @include respond-max(900px) {
+    @content;
+  }
+}
+
+@mixin content-limit {
+  width: 100%;
+  max-width: $content-max-width;
+  margin: 0 auto;
+}
+
+@mixin section-card(
+  $radius: 22px,
+  $border-color: rgba(61, 207, 182, 0.7),
+  $background: linear-gradient(103deg, rgba(17, 44, 42, 0.72) 0%, rgba(17, 23, 26, 0.66) 100%)
+) {
+  border: 1px solid $border-color;
+  border-radius: $radius;
+  background: $background;
+}

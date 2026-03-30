@@ -1,0 +1,45 @@
+<header class="site-header">
+  <div class="header-inner">
+    <div class="left-group">
+      <div class="lang-switch" aria-label="Language switch">
+        <button class="lang is-active" type="button">EN</button>
+        <button class="lang" type="button">DE</button>
+      </div>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#about">About me</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+      </nav>
+    </div>
+
+    <a class="logo-link" href="/" aria-label="Homepage">
+      <img src="/bilder/logo_header.png" alt="Angelo Niessen Logo" />
+    </a>
+
+    <button
+      class="mobile-menu-toggle"
+      type="button"
+      aria-label="Open menu"
+      [attr.aria-expanded]="menuOpen"
+      (click)="toggleMenu()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" *ngIf="menuOpen">
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="#about" (click)="closeMenu()">About me</a>
+      <a href="#skills" (click)="closeMenu()">Skills</a>
+      <a href="#projects" (click)="closeMenu()">Projects</a>
+    </nav>
+
+    <div class="lang-switch mobile-lang" aria-label="Language switch">
+      <button class="lang is-active" type="button">EN</button>
+      <button class="lang" type="button">DE</button>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,83 @@
+<section class="section" id="projects" [class.modal-open]="selectedProject !== null">
+  <div class="section-inner">
+    <div class="projects-left">
+      <p class="section-label">Portfolio</p>
+      <h2>Featured Projects</h2>
+      <p class="intro">
+        Explore a selection of my work here - Interact with projects to see my skills in action.
+      </p>
+
+      <div class="project-list" (mouseleave)="clearActiveProject()">
+        @for (project of projects; track project.id) {
+          <article
+            class="project-row"
+            [class.is-active]="activeProjectId === project.id"
+            (mouseenter)="setActiveProject(project.id)"
+            (click)="openProject(project.id)"
+          >
+            <h3>
+              {{ project.name }}
+              @if (activeProjectId === project.id) {
+                <span class="arrow">&nearr;</span>
+              }
+            </h3>
+            <p>{{ project.tech }}</p>
+          </article>
+        }
+      </div>
+    </div>
+
+    <div class="projects-preview">
+      <div class="preview-frame" [class.is-visible]="activeProjectId !== null">
+        @for (project of projects; track project.id) {
+          <img
+            [class.is-active]="activeProjectId === project.id"
+            [src]="project.image"
+            [alt]="project.name + ' project preview'"
+          />
+        }
+      </div>
+    </div>
+  </div>
+
+  @if (selectedProject) {
+    <div class="project-modal-backdrop" (click)="closeProject()">
+      <article class="project-modal" (click)="$event.stopPropagation()">
+        <button class="modal-close" type="button" (click)="closeProject()" aria-label="Close dialog">
+          &times;
+        </button>
+
+        <div class="modal-content">
+          <div class="modal-text">
+            <p class="modal-order">{{ selectedProject.order }}</p>
+            <h3>{{ selectedProject.name }}</h3>
+            <h4>What is this project about?</h4>
+            <p class="modal-description">{{ selectedProject.description }}</p>
+
+            <div class="modal-badges">
+              @for (badge of selectedProject.techBadges; track badge.label) {
+                <span>
+                  <img [src]="badge.icon" [alt]="badge.label" />
+                  {{ badge.label }}
+                </span>
+              }
+            </div>
+
+            <div class="modal-actions">
+              <a class="btn" [href]="selectedProject.githubUrl" target="_blank" rel="noopener">
+                GitHub &nearr;
+              </a>
+              <a class="btn" [href]="selectedProject.liveUrl" target="_blank" rel="noopener">
+                Live Test &nearr;
+              </a>
+            </div>
+          </div>
+
+          <div class="modal-image-wrap">
+            <img [src]="selectedProject.image" [alt]="selectedProject.name + ' detail preview'" />
+          </div>
+        </div>
+      </article>
+    </div>
+  }
+</section>

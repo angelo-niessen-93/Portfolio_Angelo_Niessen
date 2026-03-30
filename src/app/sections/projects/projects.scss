@@ -1,0 +1,377 @@
+:host {
+  display: block;
+}
+
+:host.modal-open {
+  position: relative;
+  z-index: 10000 !important;
+}
+
+.section {
+  overflow-x: clip;
+  background:
+    radial-gradient(circle at 84% 52%, rgba(18, 74, 66, 0.2) 0%, rgba(0, 0, 0, 0) 44%),
+    linear-gradient(180deg, #131a1d 0%, #12191c 100%);
+}
+
+.section-inner {
+  padding: 86px 28px;
+  display: grid;
+  grid-template-columns: minmax(520px, 1fr) minmax(280px, 360px);
+  gap: 56px;
+  align-items: start;
+}
+
+.intro {
+  margin: 28px 0 0;
+  max-width: 36ch;
+  font-size: 18px;
+  color: #d8dfdf;
+  line-height: 1.4;
+}
+
+.project-list {
+  margin-top: 42px;
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 18px;
+  padding: 32px 32px;
+  border-top: 1px solid rgba(61, 207, 182, 0.85);
+  border-bottom: 1px solid rgba(61, 207, 182, 0.85);
+  margin-top: -1px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+
+  &.is-active {
+    background: rgba(47, 117, 106, 0.66);
+  }
+
+  h3 {
+    margin: 0;
+    color: #eff4f4;
+    font-size: 48px;
+    line-height: 1;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  p {
+    margin: 0;
+    color: #d5dfde;
+    font-size: 17px;
+    line-height: 1.2;
+    text-align: right;
+  }
+}
+
+.arrow {
+  color: #e7f7f4;
+  font-size: 0.8em;
+}
+
+.projects-preview {
+  overflow-x: clip;
+  padding-top: 250px;
+}
+
+.preview-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 22px;
+  overflow: visible;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 24px;
+    bottom: -24px;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      135deg,
+      rgba(61, 207, 182, 0.9) 0 2px,
+      transparent 2px 14px
+    );
+    z-index: 1;
+  }
+
+  &.is-visible {
+    opacity: 1;
+  }
+
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 22px;
+    display: block;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 2;
+
+    &.is-active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.project-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(9, 12, 14, 0.74);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.project-modal {
+  width: min(1240px, 100%);
+  border: 1px solid rgba(61, 207, 182, 0.9);
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at 80% 48%, rgba(10, 110, 93, 0.42) 0%, rgba(0, 0, 0, 0) 44%),
+    linear-gradient(102deg, #171c20 0%, #11171b 50%, #09423c 100%);
+  padding: 26px 34px 28px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  right: 24px;
+  top: 16px;
+  border: 0;
+  background: transparent;
+  color: #e2e8e8;
+  font-size: 52px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal-content {
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) minmax(360px, 520px);
+  gap: 34px;
+  align-items: center;
+}
+
+.modal-order {
+  margin: 0;
+  color: #3dcfb6;
+  font-size: 84px;
+  line-height: 0.9;
+  font-weight: 700;
+}
+
+.modal-text {
+  h3 {
+    margin: 10px 0 0;
+    font-size: clamp(2.1rem, 5vw, 4rem);
+    line-height: 0.95;
+    color: #eff4f4;
+  }
+
+  h4 {
+    margin: 34px 0 0;
+    color: #3dcfb6;
+    font-size: 22px;
+    line-height: 1;
+  }
+}
+
+.modal-description {
+  margin: 14px 0 0;
+  color: #d7e0df;
+  max-width: 40ch;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.modal-badges {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #e5ecec;
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+  img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+  }
+}
+
+.modal-actions {
+  margin-top: 28px;
+  display: flex;
+  gap: 16px;
+
+  .btn {
+    min-height: 44px;
+    min-width: 146px;
+    font-size: 16px;
+  }
+}
+
+.modal-image-wrap {
+  border-radius: 26px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (max-width: 930px) {
+  .section-inner {
+    padding: 74px 28px;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 320px);
+    gap: 28px;
+  }
+
+  .project-row {
+    padding: 26px 22px;
+
+    h3 {
+      font-size: 40px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .projects-preview {
+    padding-top: 200px;
+  }
+
+  .preview-frame {
+    &::before {
+      left: 14px;
+      bottom: -14px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .section-inner {
+    padding: 52px 14px;
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .intro {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  .project-list {
+    margin-top: 26px;
+  }
+
+  .project-row {
+    grid-template-columns: 1fr;
+    padding: 20px 16px;
+    gap: 8px;
+
+    h3 {
+      font-size: 34px;
+    }
+
+    p {
+      text-align: left;
+      font-size: 14px;
+    }
+  }
+
+  .projects-preview {
+    padding-top: 0;
+  }
+
+  .preview-frame {
+    &::before {
+      left: 12px;
+      bottom: -14px;
+    }
+  }
+
+  .project-modal {
+    border-radius: 18px;
+    padding: 14px 14px 18px;
+  }
+
+  .modal-close {
+    right: 10px;
+    top: 8px;
+    font-size: 36px;
+  }
+
+  .modal-content {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .modal-order {
+    font-size: 42px;
+  }
+
+  .modal-text {
+    h3 {
+      font-size: 32px;
+    }
+
+    h4 {
+      margin-top: 16px;
+      font-size: 26px;
+    }
+  }
+
+  .modal-description {
+    font-size: 16px;
+  }
+
+  .modal-badges {
+    span {
+      font-size: 16px;
+    }
+
+    img {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  .modal-actions {
+    flex-wrap: wrap;
+
+    .btn {
+      min-height: 42px;
+      min-width: 130px;
+      font-size: 14px;
+    }
+  }
+}

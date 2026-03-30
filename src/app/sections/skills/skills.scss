@@ -1,0 +1,143 @@
+@use "../../../mixins" as *;
+
+:host {
+  display: block;
+}
+
+.section {
+  overflow-x: clip;
+  background:
+    radial-gradient(circle at 18% 82%, rgba(11, 64, 58, 0.32) 0%, rgba(0, 0, 0, 0) 38%),
+    linear-gradient(100deg, #11171a 0%, #12181c 55%, #131a1d 100%);
+}
+
+.section-inner {
+  padding: 82px 48px 88px;
+  display: grid;
+  grid-template-columns: minmax(360px, 540px) minmax(420px, 700px);
+  align-items: start;
+  justify-content: space-between;
+  gap: 68px;
+}
+
+.skills-left {
+  min-width: 0;
+}
+
+.skills-card {
+  @include section-card(22px);
+  min-height: 500px;
+  padding: 30px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.skills-text {
+  margin: 22px 0 0;
+  font-size: 18px;
+  color: #bfd2cf;
+  line-height: 1.35;
+}
+
+.skills-cta-text {
+  margin: 26px 0 0;
+  color: #d1e2df;
+  font-size: 34px;
+  line-height: 1.1;
+  font-weight: 700;
+
+  span {
+    color: #3dcfb6;
+  }
+}
+
+.skills-subtext {
+  margin: 16px 0 0;
+  max-width: 42ch;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #b6c6c5;
+}
+
+.skills-btn {
+  margin-top: 24px;
+  align-self: flex-start;
+  min-width: auto;
+  padding-inline: 16px;
+  min-height: 34px;
+  font-size: 13px;
+}
+
+.skills-grid-wrap {
+  min-width: 0;
+  padding-top: 8px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(90px, 1fr));
+  gap: 28px 22px;
+  justify-items: center;
+  width: 100%;
+
+  article {
+    width: 100%;
+    min-height: 74px;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    gap: 0;
+    text-align: center;
+  }
+
+  img {
+    width: auto;
+    height: auto;
+    max-width: 64px;
+    max-height: 64px;
+    object-fit: contain;
+    display: block;
+    margin-inline: auto;
+  }
+}
+
+@include respond-max(930px) {
+  .section-inner {
+    padding: 72px 28px 78px;
+    grid-template-columns: minmax(300px, 460px) minmax(0, 1fr);
+    gap: 36px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(4, minmax(70px, 1fr));
+    gap: 22px 14px;
+  }
+}
+
+@include respond-md {
+  .section-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 56px 14px;
+  }
+
+  .skills-card {
+    padding: 20px 18px;
+    border-radius: 18px;
+  }
+
+  .skills-text,
+  .skills-subtext {
+    font-size: 15px;
+  }
+
+  .skills-cta-text {
+    font-size: 28px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 12px;
+  }
+}

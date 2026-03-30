@@ -1,0 +1,111 @@
+@use "./tokens" as *;
+@use "./mixins" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: $color-bg-app;
+  color: $color-text-base;
+  font-family: $font-base;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.section-label,
+.btn {
+  font-family: $font-display;
+}
+
+.section-label {
+  margin: 0 0 16px;
+  color: $color-accent;
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+section {
+  h2 {
+    margin: 18px 0 0;
+    color: $color-accent;
+    font-size: 64px;
+    line-height: 0.92;
+  }
+}
+
+a {
+  font-size: 20px;
+}
+
+.section {
+  width: 100%;
+}
+
+.section-inner,
+.header-inner,
+.footer-inner {
+  @include content-limit;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 138px;
+  padding: 0 22px;
+  border-radius: 999px;
+  border: 1px solid $color-btn-border;
+  color: $color-text-primary;
+  background: $color-btn-bg;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+
+  @include hover-focus {
+    transform: translateY(-1px);
+    border-color: $color-accent;
+    color: $color-accent;
+  }
+}
+
+@include respond-md {
+  .section-label {
+    font-size: 30px;
+    margin-bottom: 12px;
+  }
+
+  section {
+    h2 {
+      font-size: clamp(2.2rem, 13vw, 3.4rem);
+    }
+  }
+
+  .btn-group {
+    gap: 12px;
+  }
+
+  .btn {
+    min-width: 124px;
+    min-height: 40px;
+    font-size: 0.78rem;
+  }
+}
