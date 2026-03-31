@@ -5,33 +5,44 @@
     <main class="legal-content">
       <h1>Legal Notice</h1>
 
-      <section class="legal-block" id="imprint">
-        <h2>Imprint</h2>
-        <p><strong>Information according to Section 5 TMG</strong></p>
+      <section class="legal-block">
+        <h2>Information according to Section 5 DDG</h2>
         <p>
           Angelo Niessen<br />
           Birkenderkamp 12<br />
-          52538 Selfkant, Germany
+          52538 Selfkant<br />
+          Germany
         </p>
+
         <p>
-          Email:
+          E-mail:
           <a href="mailto:contact@angeloniessen.dev">contact@angeloniessen.dev</a>
+        </p>
+
+        <p>
+          Contact form on this website:
+          <a [routerLink]="['/']" fragment="contact">Go to contact section</a>
         </p>
       </section>
 
-      <section class="legal-block" id="privacy-policy">
-        <h2>Privacy Policy</h2>
+      <section class="legal-block">
+        <h2>Responsible for content according to Section 18 para. 2 MStV</h2>
         <p>
-          This website is used to present my portfolio. Personal data is only processed when you
-          actively provide it, for example via the contact form or email.
+          Angelo Niessen<br />
+          Birkenderkamp 12<br />
+          52538 Selfkant
+        </p>
+      </section>
+
+      <section class="legal-block">
+        <h2>Additional Notes</h2>
+        <p>
+          This legal notice applies to Angelo Niessen's website.
         </p>
         <p>
-          If you contact me, your data (name, email, message) is used only to process your
-          request. No transfer to third parties takes place unless legally required.
-        </p>
-        <p>
-          You may request information, correction, or deletion of your data at any time via
-          <a href="mailto:contact@angeloniessen.dev">contact@angeloniessen.dev</a>.
+          If legally required, please add further mandatory information here: commercial register,
+          association register, partnership register or cooperative register, registration number,
+          VAT ID according to Section 27a UStG, or business ID according to Section 139c AO.
         </p>
       </section>
     </main>

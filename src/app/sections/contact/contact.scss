@@ -150,6 +150,28 @@ h3 {
   }
 }
 
+.success-message {
+  margin: 20px 0 0;
+  padding: 12px 16px;
+  background-color: rgba(61, 207, 182, 0.1);
+  border: 1px solid #3dcfb6;
+  border-radius: 4px;
+  color: #3dcfb6;
+  font-size: 16px;
+  text-align: center;
+}
+
+.error-message {
+  margin: 20px 0 0;
+  padding: 12px 16px;
+  background-color: rgba(255, 68, 68, 0.1);
+  border: 1px solid #ff4444;
+  border-radius: 4px;
+  color: #ff6b6b;
+  font-size: 16px;
+  text-align: center;
+}
+
 @include respond-max(930px) {
   .section-inner {
     padding: 78px 28px 74px;

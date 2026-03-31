@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
@@ -11,6 +12,11 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 })
 export class Contact {
   private readonly fb = inject(FormBuilder);
+  private readonly http = inject(HttpClient);
+  
+  isSubmitting = false;
+  successMessage: string | null = null;
+  errorMessage: string | null = null;
 
   readonly contactForm = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
@@ -25,14 +31,57 @@ export class Contact {
       return;
     }
 
-    const { name, email, message } = this.contactForm.getRawValue();
-    const subject = encodeURIComponent(`Portfolio Anfrage von ${name ?? ''}`);
-    const body = encodeURIComponent(
-      `Name: ${name ?? ''}\nE-Mail: ${email ?? ''}\n\nNachricht:\n${message ?? ''}`,
-    );
+    this.isSubmitting = true;
+    this.successMessage = null;
+    this.errorMessage = null;
 
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=contact@angeloniessen.dev&su=${subject}&body=${body}`;
-    window.open(gmailUrl, '_blank', 'noopener');
+    const { name, email, message } = this.contactForm.getRawValue();
+    const payload = {
+      name: name ?? '',
+      email: email ?? '',
+      message: message ?? '',
+    };
+
+    this.http.post('/send-email.php', payload).subscribe({
+      next: () => {
+        this.isSubmitting = false;
+        this.successMessage = 'Email sent successfully! I\'ll get back to you soon.';
+        this.contactForm.reset();
+        
+        setTimeout(() => {
+          this.successMessage = null;
+        }, 5000);
+      },
+      error: (error: HttpErrorResponse) => {
+        this.isSubmitting = false;
+        this.errorMessage = this.getErrorMessage(error);
+        
+        setTimeout(() => {
+          this.errorMessage = null;
+        }, 5000);
+      },
+    });
+  }
+
+  private getErrorMessage(error: HttpErrorResponse): string {
+    if (error.status === 0) {
+      return 'Server not reachable. Start a PHP server for send-email.php.';
+    }
+
+    const backendError = typeof error.error?.error === 'string' ? error.error.error : null;
+    if (backendError) {
+      return backendError;
+    }
+
+    if (error.status === 404) {
+      return 'send-email.php not found on server.';
+    }
+
+    if (error.status >= 500) {
+      return 'Server error while sending email. Please try again later.';
+    }
+
+    return 'Failed to send email. Please check your input and try again.';
   }
 
 }

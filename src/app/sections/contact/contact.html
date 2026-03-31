@@ -36,13 +36,22 @@
         <input id="privacy-consent" type="checkbox" formControlName="privacy" aria-label="Accept privacy policy" />
         <p class="privacy-text">
           I've read the
-          <a [routerLink]="['/legal-notice']" fragment="privacy-policy">privacy policy</a>
+          <a [routerLink]="['/privacy-policy']">privacy policy</a>
           and
           agree to the processing of my data as outlined.
         </p>
       </div>
 
-      <button class="btn send-btn" type="submit" [disabled]="contactForm.invalid">Say Hello ;)</button>
+      @if (successMessage) {
+        <p class="success-message">{{ successMessage }}</p>
+      }
+      @if (errorMessage) {
+        <p class="error-message">{{ errorMessage }}</p>
+      }
+
+      <button class="btn send-btn" type="submit" [disabled]="contactForm.invalid || isSubmitting">
+        {{ isSubmitting ? 'Sending...' : 'Say Hello ;)' }}
+      </button>
     </form>
   </div>
 </section>
