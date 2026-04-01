@@ -1,26 +1,40 @@
 <header class="site-header">
   <div class="header-inner">
     <div class="left-group">
-      <div class="lang-switch" aria-label="Language switch">
-        <button class="lang is-active" type="button">EN</button>
-        <button class="lang" type="button">DE</button>
+      <div class="lang-switch" [attr.aria-label]="'HEADER.LANG_SWITCH' | translate">
+        <button
+          (click)="useLanguage('en')"
+          class="lang"
+          [class.is-active]="currentLanguage === 'en'"
+          type="button"
+        >
+          EN
+        </button>
+        <button
+          (click)="useLanguage('de')"
+          class="lang"
+          [class.is-active]="currentLanguage === 'de'"
+          type="button"
+        >
+          DE
+        </button>
       </div>
 
-      <nav class="main-nav" aria-label="Main navigation">
-        <a href="#about">About me</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
+      <nav class="main-nav" [attr.aria-label]="'HEADER.MAIN_NAV' | translate">
+        <a href="#about">{{ 'HEADER.ABOUT' | translate }}</a>
+        <a href="#skills">{{ 'HEADER.SKILLS' | translate }}</a>
+        <a href="#projects">{{ 'HEADER.PROJECTS' | translate }}</a>
       </nav>
     </div>
 
-    <a class="logo-link" href="/" aria-label="Homepage">
+    <a class="logo-link" href="/" [attr.aria-label]="'HEADER.HOMEPAGE' | translate">
       <img src="/bilder/logo_header.png" alt="Angelo Niessen Logo" />
     </a>
 
     <button
       class="mobile-menu-toggle"
       type="button"
-      aria-label="Open menu"
+      [attr.aria-label]="'HEADER.OPEN_MENU' | translate"
       [attr.aria-expanded]="menuOpen"
       (click)="toggleMenu()"
     >
@@ -31,15 +45,29 @@
   </div>
 
   <div class="mobile-menu" *ngIf="menuOpen">
-    <nav class="mobile-nav" aria-label="Mobile navigation">
-      <a href="#about" (click)="closeMenu()">About me</a>
-      <a href="#skills" (click)="closeMenu()">Skills</a>
-      <a href="#projects" (click)="closeMenu()">Projects</a>
+    <nav class="mobile-nav" [attr.aria-label]="'HEADER.MOBILE_NAV' | translate">
+      <a href="#about" (click)="closeMenu()">{{ 'HEADER.ABOUT' | translate }}</a>
+      <a href="#skills" (click)="closeMenu()">{{ 'HEADER.SKILLS' | translate }}</a>
+      <a href="#projects" (click)="closeMenu()">{{ 'HEADER.PROJECTS' | translate }}</a>
     </nav>
 
-    <div class="lang-switch mobile-lang" aria-label="Language switch">
-      <button class="lang is-active" type="button">EN</button>
-      <button class="lang" type="button">DE</button>
+    <div class="lang-switch mobile-lang" [attr.aria-label]="'HEADER.LANG_SWITCH' | translate">
+      <button
+        class="lang"
+        [class.is-active]="currentLanguage === 'en'"
+        type="button"
+        (click)="useLanguage('en')"
+      >
+        EN
+      </button>
+      <button
+        class="lang"
+        [class.is-active]="currentLanguage === 'de'"
+        type="button"
+        (click)="useLanguage('de')"
+      >
+        DE
+      </button>
     </div>
   </div>
 </header>

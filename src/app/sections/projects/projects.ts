@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 type ProjectItem = {
   id: string;
@@ -15,7 +16,7 @@ type ProjectItem = {
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './projects.html',
   styleUrls: ['./projects.scss'],
   host: {
@@ -33,8 +34,7 @@ export class Projects {
       name: 'Moonberry Tales',
       tech: 'HTML | CSS | JavaScript',
       image: '/bilder/Moonbery%20Tales.png',
-      description:
-        'You can choose between three characters, make your way through a level, defeat various enemies, and fight your way to the final boss.',
+      description: 'PROJECTS.ITEMS.MOONBERRY.DESCRIPTION',
       githubUrl: 'https://github.com/angelo-niessen-93/MoonberryTales',
       liveUrl: 'https://angeloniessen.dev/MoonberryTales/',
       techBadges: [

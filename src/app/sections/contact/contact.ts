@@ -2,17 +2,19 @@ import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ReactiveFormsModule, RouterModule],
+  imports: [ReactiveFormsModule, RouterModule, TranslatePipe],
   templateUrl: './contact.html',
   styleUrls: ['./contact.scss'],
 })
 export class Contact {
   private readonly fb = inject(FormBuilder);
   private readonly http = inject(HttpClient);
+  private readonly translate = inject(TranslateService);
   
   isSubmitting = false;
   successMessage: string | null = null;
@@ -45,7 +47,7 @@ export class Contact {
     this.http.post('/send-email.php', payload).subscribe({
       next: () => {
         this.isSubmitting = false;
-        this.successMessage = 'Email sent successfully! I\'ll get back to you soon.';
+        this.successMessage = this.translate.instant('CONTACT.SUCCESS');
         this.contactForm.reset();
         
         setTimeout(() => {
@@ -65,7 +67,7 @@ export class Contact {
 
   private getErrorMessage(error: HttpErrorResponse): string {
     if (error.status === 0) {
-      return 'Server not reachable. Start a PHP server for send-email.php.';
+      return this.translate.instant('CONTACT.ERROR.SERVER_UNREACHABLE');
     }
 
     const backendError = typeof error.error?.error === 'string' ? error.error.error : null;
@@ -74,14 +76,14 @@ export class Contact {
     }
 
     if (error.status === 404) {
-      return 'send-email.php not found on server.';
+      return this.translate.instant('CONTACT.ERROR.SCRIPT_NOT_FOUND');
     }
 
     if (error.status >= 500) {
-      return 'Server error while sending email. Please try again later.';
+      return this.translate.instant('CONTACT.ERROR.SERVER');
     }
 
-    return 'Failed to send email. Please check your input and try again.';
+    return this.translate.instant('CONTACT.ERROR.GENERIC');
   }
 
 }

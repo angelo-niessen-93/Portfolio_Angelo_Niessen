@@ -1,0 +1,160 @@
+{
+  "HEADER": {
+    "LANG_SWITCH": "Language switch",
+    "MAIN_NAV": "Main navigation",
+    "MOBILE_NAV": "Mobile navigation",
+    "ABOUT": "About me",
+    "SKILLS": "Skills",
+    "PROJECTS": "Projects",
+    "HOMEPAGE": "Homepage",
+    "OPEN_MENU": "Open menu"
+  },
+  "HERO": {
+    "ROLE": "Frontend Developer",
+    "CHECK_WORK": "Check my work",
+    "CONTACT_ME": "Contact me",
+    "SEND_EMAIL": "Send email",
+    "TICKER_ARIA": "Status ticker",
+    "TICKER_REMOTE": "Available for remote work",
+    "TICKER_ROLE": "Frontend Developer",
+    "TICKER_LOCATION": "Based near Aachen"
+  },
+  "ABOUT": {
+    "SECTION_LABEL": "Who I Am",
+    "TITLE": "About me",
+    "TEXT": "Hey there, I'm Angelo. I build modern frontend experiences and always focus on clean architecture, performance, and great usability.",
+    "POINTS": {
+      "LOCATION": "Based near Aachen and open to remote collaboration.",
+      "LEARNING": "Open-minded and continuously improving my skills with new technologies.",
+      "PROBLEM_SOLVING": "Analytical problem-solving with creativity, persistence, and collaboration."
+    }
+  },
+  "SKILLS": {
+    "SECTION_LABEL": "Technologies",
+    "TITLE": "Skill Set",
+    "TEXT": "A short introduction of your skills. Highlight your experience of using different front-end technologies and emphasize your openness to learning and adapting to new technologies.",
+    "CTA_PREFIX": "You need",
+    "CTA_HIGHLIGHT": "another skill?",
+    "SUBTEXT": "Feel free to contact me. I look forward to expanding on my previous knowledge.",
+    "BUTTON": "Let's Talk"
+  },
+  "PROJECTS": {
+    "SECTION_LABEL": "Portfolio",
+    "TITLE": "Featured Projects",
+    "INTRO": "Explore a selection of my work here - Interact with projects to see my skills in action.",
+    "CLOSE_DIALOG": "Close dialog",
+    "MODAL_SUBTITLE": "What is this project about?",
+    "GITHUB": "GitHub",
+    "LIVE_TEST": "Live Test",
+    "ITEMS": {
+      "MOONBERRY": {
+        "DESCRIPTION": "You can choose between three characters, make your way through a level, defeat various enemies, and fight your way to the final boss."
+      }
+    }
+  },
+  "CONTACT": {
+    "SECTION_LABEL": "Contact me",
+    "TITLE": "Let's work together",
+    "SUBTITLE": "Got a problem to solve?",
+    "LEAD": "I help turn ideas into reliable, user-friendly web experiences. If you need a frontend developer who writes clean code and focuses on real product value, let's connect.",
+    "CTA_LINE": "Need a Frontend developer?",
+    "CTA_LINK": "Let's talk!",
+    "FORM": {
+      "NAME_LABEL": "What's your name?",
+      "NAME_PLACEHOLDER": "Your name goes here",
+      "EMAIL_LABEL": "What's your email?",
+      "EMAIL_PLACEHOLDER": "youremail@email.com",
+      "MESSAGE_LABEL": "How can I help you?",
+      "MESSAGE_PLACEHOLDER": "Hello Angelo, I am interested in...",
+      "PRIVACY_ARIA": "Accept privacy policy",
+      "PRIVACY_PREFIX": "I've read the",
+      "PRIVACY_LINK": "privacy policy",
+      "PRIVACY_SUFFIX": "and agree to the processing of my data as outlined.",
+      "SENDING": "Sending...",
+      "SUBMIT": "Say Hello ;)"
+    },
+    "SUCCESS": "Email sent successfully! I'll get back to you soon.",
+    "ERROR": {
+      "SERVER_UNREACHABLE": "Server not reachable. Start a PHP server for send-email.php.",
+      "SCRIPT_NOT_FOUND": "send-email.php not found on server.",
+      "SERVER": "Server error while sending email. Please try again later.",
+      "GENERIC": "Failed to send email. Please check your input and try again."
+    }
+  },
+  "FOOTER": {
+    "BACK_TO_TOP": "Back to top",
+    "ROLE": "Web Developer",
+    "LOCATION": "Aachen Germany",
+    "LINKS": "Footer links",
+    "LEGAL_NOTICE": "Legal Notice"
+  },
+  "LEGAL": {
+    "TITLE": "Legal Notice",
+    "COUNTRY": "Germany",
+    "SECTION_1": {
+      "TITLE": "Information according to Section 5 DDG",
+      "EMAIL_LABEL": "E-mail:",
+      "CONTACT_FORM_LABEL": "Contact form on this website:",
+      "CONTACT_LINK": "Go to contact section"
+    },
+    "SECTION_2": {
+      "TITLE": "Responsible for content according to Section 18 para. 2 MStV"
+    },
+    "SECTION_3": {
+      "TITLE": "Additional Notes",
+      "PARAGRAPH_1": "This legal notice applies to Angelo Niessen's website.",
+      "PARAGRAPH_2": "If legally required, please add further mandatory information here: commercial register, association register, partnership register or cooperative register, registration number, VAT ID according to Section 27a UStG, or business ID according to Section 139c AO."
+    }
+  },
+  "PRIVACY": {
+    "TITLE": "Privacy Policy",
+    "EMAIL_LABEL": "E-mail:",
+    "SECTION_1": {
+      "TITLE": "1. Controller",
+      "PARAGRAPH_1": "The controller responsible for data processing on this website is:"
+    },
+    "SECTION_2": {
+      "TITLE": "2. Processing when visiting this website (server log files)",
+      "PARAGRAPH_1": "When you access this website, technically necessary data may be processed in server log files (e.g. IP address, date/time, requested page, browser/OS, referrer).",
+      "PARAGRAPH_2": "The purpose is the technical provision, stability and security of this website. The legal basis is Art. 6(1)(f) GDPR (legitimate interest)."
+    },
+    "SECTION_3": {
+      "TITLE": "3. Contact form and e-mail communication",
+      "PARAGRAPH_1": "If you contact me via the contact form or by e-mail, I process the data you submit (e.g. name, e-mail address, message) to respond to your request.",
+      "PARAGRAPH_2": "The legal basis is Art. 6(1)(b) GDPR (pre-contractual communication) and additionally Art. 6(1)(f) GDPR (legitimate interest in handling inquiries)."
+    },
+    "SECTION_4": {
+      "TITLE": "4. Recipients of data",
+      "PARAGRAPH_1": "Personal data is only transferred to third parties where legally permitted or required. Technical service providers may receive access where necessary (especially hosting and e-mail providers).",
+      "PARAGRAPH_2": "Please add your specific providers here: [insert hosting provider], [insert e-mail provider]."
+    },
+    "SECTION_5": {
+      "TITLE": "5. Storage period",
+      "PARAGRAPH_1": "I store personal data only as long as necessary for the respective purposes or as long as statutory retention obligations apply."
+    },
+    "SECTION_6": {
+      "TITLE": "6. Obligation to provide data",
+      "PARAGRAPH_1": "Providing your data in the contact form is neither legally nor contractually required. However, without this information I cannot process your request."
+    },
+    "SECTION_7": {
+      "TITLE": "7. Your rights",
+      "PARAGRAPH_1": "Under the GDPR, you have the right to access, rectification, erasure, restriction of processing, data portability and to object to processing.",
+      "PARAGRAPH_2": "You also have the right to lodge a complaint with a data protection supervisory authority."
+    },
+    "SECTION_8": {
+      "TITLE": "8. Competent supervisory authority",
+      "AUTHORITY": "State Commissioner for Data Protection and Freedom of Information North Rhine-Westphalia (LDI NRW)",
+      "ADDRESS": "Kavalleriestrasse 2-4, 40213 Duesseldorf",
+      "PHONE": "Telephone: 0211 38424-0",
+      "EMAIL": "E-mail: poststelle@ldi.nrw.de"
+    },
+    "SECTION_9": {
+      "TITLE": "9. No automated decision-making",
+      "PARAGRAPH_1": "No automated decision-making, including profiling within the meaning of Art. 22 GDPR, takes place."
+    },
+    "SECTION_10": {
+      "TITLE": "10. Contact for privacy requests",
+      "PREFIX": "If you have questions regarding data protection, please contact:"
+    }
+  }
+}

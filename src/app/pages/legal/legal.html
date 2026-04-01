@@ -3,30 +3,30 @@
 
   <div class="legal-inner">
     <main class="legal-content">
-      <h1>Legal Notice</h1>
+      <h1>{{ 'LEGAL.TITLE' | translate }}</h1>
 
       <section class="legal-block">
-        <h2>Information according to Section 5 DDG</h2>
+        <h2>{{ 'LEGAL.SECTION_1.TITLE' | translate }}</h2>
         <p>
           Angelo Niessen<br />
           Birkenderkamp 12<br />
           52538 Selfkant<br />
-          Germany
+          {{ 'LEGAL.COUNTRY' | translate }}
         </p>
 
         <p>
-          E-mail:
+          {{ 'LEGAL.SECTION_1.EMAIL_LABEL' | translate }}
           <a href="mailto:contact@angeloniessen.dev">contact@angeloniessen.dev</a>
         </p>
 
         <p>
-          Contact form on this website:
-          <a [routerLink]="['/']" fragment="contact">Go to contact section</a>
+          {{ 'LEGAL.SECTION_1.CONTACT_FORM_LABEL' | translate }}
+          <a [routerLink]="['/']" fragment="contact">{{ 'LEGAL.SECTION_1.CONTACT_LINK' | translate }}</a>
         </p>
       </section>
 
       <section class="legal-block">
-        <h2>Responsible for content according to Section 18 para. 2 MStV</h2>
+        <h2>{{ 'LEGAL.SECTION_2.TITLE' | translate }}</h2>
         <p>
           Angelo Niessen<br />
           Birkenderkamp 12<br />
@@ -35,14 +35,12 @@
       </section>
 
       <section class="legal-block">
-        <h2>Additional Notes</h2>
+        <h2>{{ 'LEGAL.SECTION_3.TITLE' | translate }}</h2>
         <p>
-          This legal notice applies to Angelo Niessen's website.
+          {{ 'LEGAL.SECTION_3.PARAGRAPH_1' | translate }}
         </p>
         <p>
-          If legally required, please add further mandatory information here: commercial register,
-          association register, partnership register or cooperative register, registration number,
-          VAT ID according to Section 27a UStG, or business ID according to Section 139c AO.
+          {{ 'LEGAL.SECTION_3.PARAGRAPH_2' | translate }}
         </p>
       </section>
     </main>

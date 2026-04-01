@@ -1,17 +1,17 @@
-﻿<footer class="site-footer">
+<footer class="site-footer">
   <div class="footer-inner">
-    <a class="brand-link" href="#top" aria-label="Back to top">
+    <a class="brand-link" href="#top" [attr.aria-label]="'FOOTER.BACK_TO_TOP' | translate">
       <img src="/bilder/logo_header.png" alt="Angelo Niessen logo" />
     </a>
-    <p class="footer-role">Web Developer</p>
-    <p class="footer-location">Aachen Germany</p>
+    <p class="footer-role">{{ 'FOOTER.ROLE' | translate }}</p>
+    <p class="footer-location">{{ 'FOOTER.LOCATION' | translate }}</p>
 
     <p class="footer-copy">&copy; Angelo Niessen 2026</p>
 
-    <nav class="footer-links" aria-label="Footer links">
+    <nav class="footer-links" [attr.aria-label]="'FOOTER.LINKS' | translate">
       <a href="https://github.com/angelo-niessen-93" target="_blank" rel="noopener">Github</a>
       <a href="mailto:contact@angeloniessen.dev">Email</a>
-      <a [routerLink]="['/legal-notice']">Legal Notice</a>
+      <a [routerLink]="['/legal-notice']">{{ 'FOOTER.LEGAL_NOTICE' | translate }}</a>
     </nav>
   </div>
 </footer>
