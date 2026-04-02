@@ -3,11 +3,11 @@
     "LANG_SWITCH": "Sprachauswahl",
     "MAIN_NAV": "Hauptnavigation",
     "MOBILE_NAV": "Mobile Navigation",
-    "ABOUT": "Ãœber mich",
+    "ABOUT": "Über mich",
     "SKILLS": "Skills",
     "PROJECTS": "Projekte",
     "HOMEPAGE": "Startseite",
-    "OPEN_MENU": "MenÃ¼ Ã¶ffnen"
+    "OPEN_MENU": "Menü öffnen"
   },
   "HERO": {
     "ROLE": "Frontend Entwickler",
@@ -15,24 +15,24 @@
     "CONTACT_ME": "Kontakt",
     "SEND_EMAIL": "E-Mail senden",
     "TICKER_ARIA": "Statusanzeige",
-    "TICKER_REMOTE": "VerfÃ¼gbar fÃ¼r Remote-Arbeit",
+    "TICKER_REMOTE": "Verfügbar für Remote-Arbeit",
     "TICKER_ROLE": "Frontend Entwickler",
     "TICKER_LOCATION": "Raum Aachen"
   },
   "ABOUT": {
     "SECTION_LABEL": "Wer ich bin",
-    "TITLE": "Ãœber mich",
+    "TITLE": "Über mich",
     "TEXT": "Hi, ich bin Angelo. Ich entwickle moderne Frontend-Erlebnisse und achte immer auf saubere Architektur, Performance und starke Usability.",
     "POINTS": {
-      "LOCATION": "Im Raum Aachen und offen fÃ¼r Remote-Zusammenarbeit.",
-      "LEARNING": "Aufgeschlossen und stÃ¤ndig dabei, meine Skills mit neuen Technologien zu erweitern.",
-      "PROBLEM_SOLVING": "Analytische ProblemlÃ¶sung mit KreativitÃ¤t, Ausdauer und Teamarbeit."
+      "LOCATION": "Im Raum Aachen und offen für Remote-Zusammenarbeit.",
+      "LEARNING": "Aufgeschlossen und ständig dabei, meine Skills mit neuen Technologien zu erweitern.",
+      "PROBLEM_SOLVING": "Analytische Problemlösung mit Kreativität, Ausdauer und Teamarbeit."
     }
   },
   "SKILLS": {
     "SECTION_LABEL": "Technologien",
     "TITLE": "Skill Set",
-    "TEXT": "Ein kurzer Einblick in meine FÃ¤higkeiten. Hier siehst du meine Erfahrung mit verschiedenen Frontend-Technologien und meine Offenheit, Neues zu lernen und mich weiterzuentwickeln.",
+    "TEXT": "Ein kurzer Einblick in meine Fähigkeiten. Hier siehst du meine Erfahrung mit verschiedenen Frontend-Technologien und meine Offenheit, Neues zu lernen und mich weiterzuentwickeln.",
     "CTA_PREFIX": "Du brauchst",
     "CTA_HIGHLIGHT": "noch einen Skill?",
     "SUBTEXT": "Schreib mir gerne. Ich freue mich darauf, mein Wissen weiter auszubauen.",
@@ -40,19 +40,19 @@
   },
   "PROJECTS": {
     "SECTION_LABEL": "Portfolio",
-    "TITLE": "AusgewÃ¤hlte Projekte",
+    "TITLE": "Ausgewählte Projekte",
     "INTRO": "Hier findest du eine Auswahl meiner Arbeiten. Interagiere mit den Projekten und sieh meine Skills in Aktion.",
-    "CLOSE_DIALOG": "Dialog schlieÃŸen",
+    "CLOSE_DIALOG": "Dialog schließen",
     "MODAL_SUBTITLE": "Worum geht es in diesem Projekt?",
     "GITHUB": "GitHub",
     "LIVE_TEST": "Live-Test",
     "IN_PROGRESS": "in Arbeit",
     "ITEMS": {
       "MOONBERRY": {
-        "DESCRIPTION": "Du kannst zwischen drei Charakteren wÃ¤hlen, dich durch ein Level kÃ¤mpfen, verschiedene Gegner besiegen und dich bis zum finalen Boss durchschlagen."
+        "DESCRIPTION": "Du kannst zwischen drei Charakteren wählen, dich durch ein Level kämpfen, verschiedene Gegner besiegen und dich bis zum finalen Boss durchschlagen."
       },
       "POKEDEX": {
-        "DESCRIPTION": "Eine vollstÃ¤ndige Pokemon-Datenbank, in der alle Pokemon durchsucht und mit Details angezeigt werden kÃ¶nnen."
+        "DESCRIPTION": "Eine vollständige Pokemon-Datenbank, in der alle Pokemon durchsucht und mit Details angezeigt werden können."
       },
       "JOIN": {
         "DESCRIPTION": "Eine Kanban-App zur Aufgabenverwaltung. Dieses Projekt ist aktuell in Arbeit."
@@ -62,30 +62,30 @@
   "CONTACT": {
     "SECTION_LABEL": "Kontakt",
     "TITLE": "Lass uns zusammenarbeiten",
-    "SUBTITLE": "Du hast ein Problem zu lÃ¶sen?",
-    "LEAD": "Ich helfe dabei, Ideen in zuverlÃ¤ssige und benutzerfreundliche Web-Erlebnisse zu verwandeln. Wenn du einen Frontend-Entwickler suchst, der sauberen Code schreibt und echten Produktwert schafft, lass uns sprechen.",
+    "SUBTITLE": "Du hast ein Problem zu lösen?",
+    "LEAD": "Ich helfe dabei, Ideen in zuverlässige und benutzerfreundliche Web-Erlebnisse zu verwandeln. Wenn du einen Frontend-Entwickler suchst, der sauberen Code schreibt und echten Produktwert schafft, lass uns sprechen.",
     "CTA_LINE": "Du brauchst einen Frontend-Entwickler?",
     "CTA_LINK": "Lass uns reden!",
     "FORM": {
-      "NAME_LABEL": "Wie heiÃŸt du?",
+      "NAME_LABEL": "Wie heißt du?",
       "NAME_PLACEHOLDER": "Dein Name",
       "EMAIL_LABEL": "Wie ist deine E-Mail?",
       "EMAIL_PLACEHOLDER": "deinname@email.de",
       "MESSAGE_LABEL": "Wie kann ich dir helfen?",
-      "MESSAGE_PLACEHOLDER": "Hallo Angelo, ich interessiere mich fÃ¼r...",
-      "PRIVACY_ARIA": "DatenschutzerklÃ¤rung akzeptieren",
+      "MESSAGE_PLACEHOLDER": "Hallo Angelo, ich interessiere mich für...",
+      "PRIVACY_ARIA": "Datenschutzerklärung akzeptieren",
       "PRIVACY_PREFIX": "Ich habe die",
-      "PRIVACY_LINK": "DatenschutzerklÃ¤rung",
+      "PRIVACY_LINK": "Datenschutzerklärung",
       "PRIVACY_SUFFIX": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
       "SENDING": "Wird gesendet...",
       "SUBMIT": "Sag Hallo ;)"
     },
     "SUCCESS": "E-Mail erfolgreich gesendet! Ich melde mich bald bei dir.",
     "ERROR": {
-      "SERVER_UNREACHABLE": "Server nicht erreichbar. Starte einen PHP-Server fÃ¼r send-email.php.",
+      "SERVER_UNREACHABLE": "Server nicht erreichbar. Starte einen PHP-Server für send-email.php.",
       "SCRIPT_NOT_FOUND": "send-email.php wurde auf dem Server nicht gefunden.",
-      "SERVER": "Serverfehler beim Senden der E-Mail. Bitte versuche es spÃ¤ter erneut.",
-      "GENERIC": "E-Mail konnte nicht gesendet werden. Bitte prÃ¼fe deine Eingaben und versuche es erneut."
+      "SERVER": "Serverfehler beim Senden der E-Mail. Bitte versuche es später erneut.",
+      "GENERIC": "E-Mail konnte nicht gesendet werden. Bitte prüfe deine Eingaben und versuche es erneut."
     }
   },
   "FOOTER": {
@@ -99,45 +99,45 @@
     "TITLE": "Impressum",
     "COUNTRY": "Deutschland",
     "SECTION_1": {
-      "TITLE": "Angaben gemÃ¤ÃŸ Â§ 5 DDG",
+      "TITLE": "Angaben gemäß § 5 DDG",
       "EMAIL_LABEL": "E-Mail:",
       "CONTACT_FORM_LABEL": "Kontaktformular auf dieser Website:",
       "CONTACT_LINK": "Zum Kontaktbereich"
     },
     "SECTION_2": {
-      "TITLE": "Verantwortlich fÃ¼r den Inhalt nach Â§ 18 Abs. 2 MStV"
+      "TITLE": "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV"
     },
     "SECTION_3": {
-      "TITLE": "ZusÃ¤tzliche Hinweise",
-      "PARAGRAPH_1": "Dieses Impressum gilt fÃ¼r die Website von Angelo Niessen.",
-      "PARAGRAPH_2": "Falls rechtlich erforderlich, ergÃ¤nze hier weitere Pflichtangaben: Handelsregister, Vereinsregister, Partnerschaftsregister oder Genossenschaftsregister, Registernummer, USt-IdNr. nach Â§ 27a UStG oder Wirtschafts-Identifikationsnummer nach Â§ 139c AO."
+      "TITLE": "Zusätzliche Hinweise",
+      "PARAGRAPH_1": "Dieses Impressum gilt für die Website von Angelo Niessen.",
+      "PARAGRAPH_2": "Falls rechtlich erforderlich, ergänze hier weitere Pflichtangaben: Handelsregister, Vereinsregister, Partnerschaftsregister oder Genossenschaftsregister, Registernummer, USt-IdNr. nach § 27a UStG oder Wirtschafts-Identifikationsnummer nach § 139c AO."
     }
   },
   "PRIVACY": {
-    "TITLE": "DatenschutzerklÃ¤rung",
+    "TITLE": "Datenschutzerklärung",
     "EMAIL_LABEL": "E-Mail:",
     "SECTION_1": {
       "TITLE": "1. Verantwortlicher",
-      "PARAGRAPH_1": "Verantwortlich fÃ¼r die Datenverarbeitung auf dieser Website ist:"
+      "PARAGRAPH_1": "Verantwortlich für die Datenverarbeitung auf dieser Website ist:"
     },
     "SECTION_2": {
       "TITLE": "2. Verarbeitung beim Besuch dieser Website (Server-Logfiles)",
-      "PARAGRAPH_1": "Beim Aufruf dieser Website kÃ¶nnen technisch erforderliche Daten in Server-Logfiles verarbeitet werden (z. B. IP-Adresse, Datum/Uhrzeit, aufgerufene Seite, Browser/OS, Referrer).",
-      "PARAGRAPH_2": "Zweck ist die technische Bereitstellung, StabilitÃ¤t und Sicherheit dieser Website. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse)."
+      "PARAGRAPH_1": "Beim Aufruf dieser Website können technisch erforderliche Daten in Server-Logfiles verarbeitet werden (z. B. IP-Adresse, Datum/Uhrzeit, aufgerufene Seite, Browser/OS, Referrer).",
+      "PARAGRAPH_2": "Zweck ist die technische Bereitstellung, Stabilität und Sicherheit dieser Website. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse)."
     },
     "SECTION_3": {
       "TITLE": "3. Kontaktformular und E-Mail-Kommunikation",
-      "PARAGRAPH_1": "Wenn du mich Ã¼ber das Kontaktformular oder per E-Mail kontaktierst, verarbeite ich die von dir Ã¼bermittelten Daten (z. B. Name, E-Mail-Adresse, Nachricht), um dein Anliegen zu bearbeiten.",
-      "PARAGRAPH_2": "Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Kommunikation) sowie zusÃ¤tzlich Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Bearbeitung von Anfragen)."
+      "PARAGRAPH_1": "Wenn du mich über das Kontaktformular oder per E-Mail kontaktierst, verarbeite ich die von dir übermittelten Daten (z. B. Name, E-Mail-Adresse, Nachricht), um dein Anliegen zu bearbeiten.",
+      "PARAGRAPH_2": "Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Kommunikation) sowie zusätzlich Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Bearbeitung von Anfragen)."
     },
     "SECTION_4": {
-      "TITLE": "4. EmpfÃ¤nger von Daten",
-      "PARAGRAPH_1": "Personenbezogene Daten werden nur dann an Dritte Ã¼bermittelt, wenn dies gesetzlich erlaubt oder vorgeschrieben ist. Technische Dienstleister kÃ¶nnen Zugriff erhalten, soweit dies erforderlich ist (insbesondere Hosting- und E-Mail-Provider).",
-      "PARAGRAPH_2": "Bitte ergÃ¤nze hier deine konkreten Anbieter: [Hosting-Provider einfÃ¼gen], [E-Mail-Provider einfÃ¼gen]."
+      "TITLE": "4. Empfänger von Daten",
+      "PARAGRAPH_1": "Personenbezogene Daten werden nur dann an Dritte übermittelt, wenn dies gesetzlich erlaubt oder vorgeschrieben ist. Technische Dienstleister können Zugriff erhalten, soweit dies erforderlich ist (insbesondere Hosting- und E-Mail-Provider).",
+      "PARAGRAPH_2": "Bitte ergänze hier deine konkreten Anbieter: [Hosting-Provider einfügen], [E-Mail-Provider einfügen]."
     },
     "SECTION_5": {
       "TITLE": "5. Speicherdauer",
-      "PARAGRAPH_1": "Ich speichere personenbezogene Daten nur so lange, wie es fÃ¼r die jeweiligen Zwecke erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen."
+      "PARAGRAPH_1": "Ich speichere personenbezogene Daten nur so lange, wie es für die jeweiligen Zwecke erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen."
     },
     "SECTION_6": {
       "TITLE": "6. Pflicht zur Bereitstellung von Daten",
@@ -145,19 +145,19 @@
     },
     "SECTION_7": {
       "TITLE": "7. Deine Rechte",
-      "PARAGRAPH_1": "Nach der DSGVO hast du das Recht auf Auskunft, Berichtigung, LÃ¶schung, EinschrÃ¤nkung der Verarbeitung, DatenÃ¼bertragbarkeit sowie Widerspruch gegen die Verarbeitung.",
-      "PARAGRAPH_2": "AuÃŸerdem hast du das Recht, dich bei einer DatenschutzaufsichtsbehÃ¶rde zu beschweren."
+      "PARAGRAPH_1": "Nach der DSGVO hast du das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie Widerspruch gegen die Verarbeitung.",
+      "PARAGRAPH_2": "Außerdem hast du das Recht, dich bei einer Datenschutzaufsichtsbehörde zu beschweren."
     },
     "SECTION_8": {
-      "TITLE": "8. ZustÃ¤ndige AufsichtsbehÃ¶rde",
-      "AUTHORITY": "Landesbeauftragte fÃ¼r Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW)",
-      "ADDRESS": "KavalleriestraÃŸe 2-4, 40213 DÃ¼sseldorf",
+      "TITLE": "8. Zuständige Aufsichtsbehörde",
+      "AUTHORITY": "Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW)",
+      "ADDRESS": "Kavalleriestraße 2-4, 40213 Düsseldorf",
       "PHONE": "Telefon: 0211 38424-0",
       "EMAIL": "E-Mail: poststelle@ldi.nrw.de"
     },
     "SECTION_9": {
       "TITLE": "9. Keine automatisierte Entscheidungsfindung",
-      "PARAGRAPH_1": "Eine automatisierte Entscheidungsfindung einschlieÃŸlich Profiling im Sinne von Art. 22 DSGVO findet nicht statt."
+      "PARAGRAPH_1": "Eine automatisierte Entscheidungsfindung einschließlich Profiling im Sinne von Art. 22 DSGVO findet nicht statt."
     },
     "SECTION_10": {
       "TITLE": "10. Kontakt bei Datenschutzanfragen",
@@ -165,4 +165,5 @@
     }
   }
 }
+
 
