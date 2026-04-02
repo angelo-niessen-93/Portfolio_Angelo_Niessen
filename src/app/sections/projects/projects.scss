@@ -228,9 +228,19 @@
   gap: 16px;
 
   .btn {
-    min-height: 44px;
+    min-height: 52px;
     min-width: 146px;
     font-size: 16px;
+  }
+
+  .btn.is-disabled {
+    opacity: 0.6;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  .btn.is-disabled .strike-label {
+    text-decoration: line-through;
   }
 }
 
@@ -369,7 +379,7 @@
     flex-wrap: wrap;
 
     .btn {
-      min-height: 42px;
+      min-height: 50px;
       min-width: 130px;
       font-size: 14px;
     }

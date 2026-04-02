@@ -186,11 +186,51 @@ h1 {
   }
 }
 
+.linkedin-link {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  line-height: 0;
+  text-decoration: none;
+  outline: none;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: none;
+  }
+
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: opacity 0.2s ease;
+  }
+
+  &:hover .linkedin-hover,
+  &:focus-visible .linkedin-hover {
+    opacity: 1;
+  }
+
+  &:hover .linkedin-default,
+  &:focus-visible .linkedin-default {
+    opacity: 0;
+  }
+}
+
 .github-hover {
   opacity: 0;
   width: 44px;
   height: 32px;
   max-width: none;
+}
+
+.linkedin-hover {
+  opacity: 0;
 }
 
 .ticker-wrap {
@@ -349,6 +389,11 @@ h1 {
   }
 
   .github-link {
+    width: 28px;
+    height: 28px;
+  }
+
+  .linkedin-link {
     width: 28px;
     height: 28px;
   }

@@ -64,12 +64,24 @@
             </div>
 
             <div class="modal-actions">
-              <a class="btn" [href]="selectedProject.githubUrl" target="_blank" rel="noopener">
-                {{ 'PROJECTS.GITHUB' | translate }} &nearr;
-              </a>
-              <a class="btn" [href]="selectedProject.liveUrl" target="_blank" rel="noopener">
-                {{ 'PROJECTS.LIVE_TEST' | translate }} &nearr;
-              </a>
+              @if (selectedProject.githubUrl) {
+                <a class="btn" [href]="selectedProject.githubUrl" target="_blank" rel="noopener">
+                  {{ 'PROJECTS.GITHUB' | translate }} &nearr;
+                </a>
+              } @else if (selectedProject.id === 'join') {
+                <span class="btn is-disabled" aria-disabled="true">
+                  <span class="strike-label">{{ 'PROJECTS.GITHUB' | translate }}</span> ({{ 'PROJECTS.IN_PROGRESS' | translate }})
+                </span>
+              }
+              @if (selectedProject.liveUrl) {
+                <a class="btn" [href]="selectedProject.liveUrl" target="_blank" rel="noopener">
+                  {{ 'PROJECTS.LIVE_TEST' | translate }} &nearr;
+                </a>
+              } @else if (selectedProject.id === 'join') {
+                <span class="btn is-disabled" aria-disabled="true">
+                  <span class="strike-label">{{ 'PROJECTS.LIVE_TEST' | translate }}</span> ({{ 'PROJECTS.IN_PROGRESS' | translate }})
+                </span>
+              }
             </div>
           </div>
 

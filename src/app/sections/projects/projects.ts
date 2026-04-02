@@ -8,8 +8,8 @@ type ProjectItem = {
   tech: string;
   image: string;
   description: string;
-  githubUrl: string;
-  liveUrl: string;
+  githubUrl?: string;
+  liveUrl?: string;
   techBadges: Array<{ icon: string; label: string }>;
 };
 
@@ -41,6 +41,35 @@ export class Projects {
         { icon: '/icons/JavaScript.png', label: 'JavaScript' },
         { icon: '/icons/HTML.png', label: 'HTML' },
         { icon: '/icons/HTML.png', label: 'CSS' },
+      ],
+    },
+    {
+      id: 'pokedex',
+      order: '02',
+      name: 'Pokedex',
+      tech: 'HTML | CSS | JavaScript | REST API',
+      image: '/bilder/Pokedex.jpeg',
+      description: 'PROJECTS.ITEMS.POKEDEX.DESCRIPTION',
+      githubUrl: 'https://github.com/angelo-niessen-93/pokedex-test',
+      liveUrl: 'https://angeloniessen.dev/pokedex/',
+      techBadges: [
+        { icon: '/icons/JavaScript.png', label: 'JavaScript' },
+        { icon: '/icons/Rest-Api.png', label: 'REST API' },
+        { icon: '/icons/HTML.png', label: 'HTML' },
+        { icon: '/icons/CSS.png', label: 'CSS' },
+      ],
+    },
+    {
+      id: 'join',
+      order: '03',
+      name: 'Join',
+      tech: 'In progress',
+      image: '/bilder/join.png',
+      description: 'PROJECTS.ITEMS.JOIN.DESCRIPTION',
+      techBadges: [
+        { icon: '/icons/Angular.png', label: 'Angular' },
+        { icon: '/icons/TypeScript.png', label: 'TypeScript' },
+        { icon: '/icons/Firebase.png', label: 'Firebase' },
       ],
     },
   ];

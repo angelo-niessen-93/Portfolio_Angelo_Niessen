@@ -1,4 +1,4 @@
-{
+﻿{
   "HEADER": {
     "LANG_SWITCH": "Language switch",
     "MAIN_NAV": "Main navigation",
@@ -46,9 +46,16 @@
     "MODAL_SUBTITLE": "What is this project about?",
     "GITHUB": "GitHub",
     "LIVE_TEST": "Live Test",
+    "IN_PROGRESS": "in progress",
     "ITEMS": {
       "MOONBERRY": {
         "DESCRIPTION": "You can choose between three characters, make your way through a level, defeat various enemies, and fight your way to the final boss."
+      },
+      "POKEDEX": {
+        "DESCRIPTION": "A complete Pokemon database where users can browse, search, and explore detailed information about all Pokemon."
+      },
+      "JOIN": {
+        "DESCRIPTION": "A Kanban-style task management app. This project is currently in progress."
       }
     }
   },
@@ -158,3 +165,4 @@
     }
   }
 }
+
