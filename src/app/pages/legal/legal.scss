@@ -25,9 +25,12 @@
   h1 {
     margin: 0;
     color: $color-accent;
-    font-size: clamp(46px, 8vw, 76px);
-    line-height: 1;
+    line-height: 1.05;
     text-align: center;
+    text-wrap: balance;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    max-inline-size: 100%;
   }
 }
 
