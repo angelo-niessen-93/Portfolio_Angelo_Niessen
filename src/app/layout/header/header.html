@@ -21,9 +21,30 @@
       </div>
 
       <nav class="main-nav" [attr.aria-label]="'HEADER.MAIN_NAV' | translate">
-        <a href="#about">{{ 'HEADER.ABOUT' | translate }}</a>
-        <a href="#skills">{{ 'HEADER.SKILLS' | translate }}</a>
-        <a href="#projects">{{ 'HEADER.PROJECTS' | translate }}</a>
+        <a
+          href="#about"
+          (click)="setActiveSection('about')"
+          [class.is-active]="activeSection === 'about'"
+          [attr.aria-current]="activeSection === 'about' ? 'page' : null"
+        >
+          {{ 'HEADER.ABOUT' | translate }}
+        </a>
+        <a
+          href="#skills"
+          (click)="setActiveSection('skills')"
+          [class.is-active]="activeSection === 'skills'"
+          [attr.aria-current]="activeSection === 'skills' ? 'page' : null"
+        >
+          {{ 'HEADER.SKILLS' | translate }}
+        </a>
+        <a
+          href="#projects"
+          (click)="setActiveSection('projects')"
+          [class.is-active]="activeSection === 'projects'"
+          [attr.aria-current]="activeSection === 'projects' ? 'page' : null"
+        >
+          {{ 'HEADER.PROJECTS' | translate }}
+        </a>
       </nav>
     </div>
 
@@ -46,9 +67,9 @@
 
   <div class="mobile-menu" *ngIf="menuOpen">
     <nav class="mobile-nav" [attr.aria-label]="'HEADER.MOBILE_NAV' | translate">
-      <a href="#about" (click)="closeMenu()">{{ 'HEADER.ABOUT' | translate }}</a>
-      <a href="#skills" (click)="closeMenu()">{{ 'HEADER.SKILLS' | translate }}</a>
-      <a href="#projects" (click)="closeMenu()">{{ 'HEADER.PROJECTS' | translate }}</a>
+      <a href="#about" (click)="setActiveSection('about'); closeMenu()">{{ 'HEADER.ABOUT' | translate }}</a>
+      <a href="#skills" (click)="setActiveSection('skills'); closeMenu()">{{ 'HEADER.SKILLS' | translate }}</a>
+      <a href="#projects" (click)="setActiveSection('projects'); closeMenu()">{{ 'HEADER.PROJECTS' | translate }}</a>
     </nav>
 
     <div class="lang-switch mobile-lang" [attr.aria-label]="'HEADER.LANG_SWITCH' | translate">

@@ -11,23 +11,54 @@
         <p class="skills-subtext">
           {{ 'SKILLS.SUBTEXT' | translate }}
         </p>
-        <a class="btn skills-btn" href="#contact">{{ 'SKILLS.BUTTON' | translate }}</a>
+        <a class="btn skills-btn" href="#contact" [attr.data-label]="'SKILLS.BUTTON' | translate">{{
+          'SKILLS.BUTTON' | translate
+        }}</a>
       </article>
     </div>
 
     <div class="skills-grid-wrap">
       <div class="skills-grid">
-        <article><img src="/icons/HTML.png" alt="" aria-hidden="true" /></article>
-        <article><img src="/icons/CSS.png" alt="" aria-hidden="true" /></article>
-        <article><img src="/icons/JavaScript.png" alt="" aria-hidden="true" /></article>
-        <article><img src="/icons/Material Design.png" alt="" aria-hidden="true" /></article>
-        <article><img src="/icons/TypeScript.png" alt="" aria-hidden="true" /></article>
-        <article><img src="/icons/Angular.png" alt="" aria-hidden="true" /></article>
-        <article><img src="/icons/Firebase.png" alt="" aria-hidden="true" /></article>
-        <article><img src="/icons/GIT.png" alt="" aria-hidden="true" /></article>
-        <article><img src="/icons/Rest-Api.png" alt="" aria-hidden="true" /></article>
-        <article><img src="/icons/Scrum.png" alt="" aria-hidden="true" /></article>
-        <article><img src="/icons/18. Growth Mindset interaction.png" alt="" aria-hidden="true" /></article>
+        <article class="skill-item">
+          <img src="/icons/skillset/HTML (2).png" alt="HTML icon" />
+          <span>HTML</span>
+        </article>
+        <article class="skill-item">
+          <img src="/icons/skillset/CSS.png" alt="CSS icon" />
+          <span>CSS</span>
+        </article>
+        <article class="skill-item">
+          <img src="/icons/skillset/JavaScript (2).png" alt="JavaScript icon" />
+          <span>JavaScript</span>
+        </article>
+        <article class="skill-item">
+          <img src="/icons/skillset/MaterialDesign.png" alt="Material Design icon" />
+          <span>Material Design</span>
+        </article>
+        <article class="skill-item">
+          <img src="/icons/skillset/TypeScript.png" alt="TypeScript icon" />
+          <span>TypeScript</span>
+        </article>
+        <article class="skill-item">
+          <img src="/icons/skillset/Angular (2).png" alt="Angular icon" />
+          <span>Angular</span>
+        </article>
+        <article class="skill-item">
+          <img src="/icons/skillset/Supabase.png" alt="Supabase icon" />
+          <span>Supabase</span>
+        </article>
+        <article class="skill-item">
+          <img src="/icons/skillset/Git (2).png" alt="Git icon" />
+          <span>Git</span>
+        </article>
+        <article class="skill-item">
+          <img src="/icons/skillset/REST-API (2).png" alt="REST API icon" />
+          <span>REST-API</span>
+        </article>
+        <article class="skill-item">
+          <img src="/icons/skillset/Scrum (2).png" alt="Scrum icon" />
+          <span>Scrum</span>
+        </article>
       </div>
     </div>
   </div>

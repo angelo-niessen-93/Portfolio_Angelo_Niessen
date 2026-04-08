@@ -5,7 +5,7 @@
 }
 
 .section {
-  overflow-x: clip;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at 18% 82%, rgba(11, 64, 58, 0.32) 0%, rgba(0, 0, 0, 0) 38%),
     linear-gradient(100deg, #11171a 0%, #12181c 55%, #131a1d 100%);
@@ -43,7 +43,7 @@
 .skills-cta-text {
   margin: 26px 0 0;
   color: #d1e2df;
-  font-size: 34px;
+  font-size: 24px;
   line-height: 1.1;
   font-weight: 700;
 
@@ -55,7 +55,7 @@
 .skills-subtext {
   margin: 16px 0 0;
   max-width: 42ch;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.4;
   color: #b6c6c5;
 }
@@ -63,10 +63,6 @@
 .skills-btn {
   margin-top: 24px;
   align-self: flex-start;
-  min-width: auto;
-  padding-inline: 16px;
-  min-height: 34px;
-  font-size: 13px;
 }
 
 .skills-grid-wrap {
@@ -81,14 +77,27 @@
   justify-items: center;
   width: 100%;
 
-  article {
+  .skill-item {
     width: 100%;
-    min-height: 74px;
+    min-height: 96px;
     display: grid;
     justify-items: center;
     align-content: center;
-    gap: 0;
+    gap: 8px;
     text-align: center;
+    transition: transform 0.18s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+
+      img {
+        filter: drop-shadow(0 0 8px rgba(61, 207, 182, 0.35));
+      }
+
+      span {
+        color: #3dcfb6;
+      }
+    }
   }
 
   img {
@@ -99,6 +108,15 @@
     object-fit: contain;
     display: block;
     margin-inline: auto;
+    transition: filter 0.18s ease;
+  }
+
+  span {
+    color: #eef4f5;
+    font-size: 16px;
+    line-height: 1.15;
+    letter-spacing: 0.01em;
+    transition: color 0.18s ease;
   }
 }
 

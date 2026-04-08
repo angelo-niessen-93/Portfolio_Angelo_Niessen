@@ -8,7 +8,7 @@
 }
 
 .section {
-  overflow-x: clip;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at 84% 52%, rgba(18, 74, 66, 0.2) 0%, rgba(0, 0, 0, 0) 44%),
     linear-gradient(180deg, #131a1d 0%, #12191c 100%);
@@ -76,8 +76,9 @@
 }
 
 .projects-preview {
-  overflow-x: clip;
+  overflow: hidden;
   padding-top: 250px;
+  padding-bottom: 28px;
 }
 
 .preview-frame {
@@ -385,3 +386,4 @@
     }
   }
 }
+

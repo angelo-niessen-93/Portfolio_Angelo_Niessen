@@ -45,13 +45,13 @@
 .role {
   margin: 0;
   color: #d8e2e2;
-  font-size: clamp(1.7rem, 3.8vw, 2.5rem);
+  font-size: 40px;
   letter-spacing: 0.04em;
 }
 
 h1 {
   margin: 12px 0 0;
-  font-size: clamp(56px, 9vw, 128px);
+  font-size: 128px;
   line-height: 1;
   color: #f4f6f7;
   letter-spacing: -0.02em;
@@ -78,14 +78,26 @@ h1 {
 }
 
 .dot-arrow {
-  width: 28px;
-  height: 28px;
-  border-radius: 999px;
-  border: 1px solid rgba(110, 224, 207, 0.8);
-  display: grid;
-  place-items: center;
-  color: #6ee0cf;
-  font-size: 13px;
+  width: 30px;
+  height: 48px;
+  display: inline-block;
+  position: relative;
+}
+
+.arrow-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.arrow-1 {
+  animation: arrow-swap-1 1.2s steps(1, end) infinite;
+}
+
+.arrow-2 {
+  animation: arrow-swap-2 1.2s steps(1, end) infinite;
 }
 
 .line {
@@ -119,7 +131,6 @@ h1 {
 
 .mail-icon {
   display: none;
-  width: 24px;
   height: 24px;
   object-fit: contain;
 }
@@ -135,7 +146,6 @@ h1 {
   position: absolute;
   inset: 0;
   display: block;
-  width: 100%;
   height: 100%;
   transition: opacity 0.2s ease;
 }
@@ -158,7 +168,7 @@ h1 {
   line-height: 0;
   text-decoration: none;
   outline: none;
-  overflow: hidden;
+  overflow: visible;
 
   &::before,
   &::after {
@@ -168,7 +178,6 @@ h1 {
   img {
     position: absolute;
     inset: 0;
-    width: 100%;
     height: 100%;
     object-fit: contain;
     display: block;
@@ -194,7 +203,7 @@ h1 {
   line-height: 0;
   text-decoration: none;
   outline: none;
-  overflow: hidden;
+  overflow: visible;
 
   &::before,
   &::after {
@@ -204,7 +213,6 @@ h1 {
   img {
     position: absolute;
     inset: 0;
-    width: 100%;
     height: 100%;
     object-fit: contain;
     display: block;
@@ -224,8 +232,6 @@ h1 {
 
 .github-hover {
   opacity: 0;
-  width: 44px;
-  height: 32px;
   max-width: none;
 }
 
@@ -265,7 +271,7 @@ h1 {
     padding: 0 clamp(12px, 2vw, 22px);
     align-items: center;
     gap: clamp(8px, 1.6vw, 16px);
-    font-size: 1.88rem;
+    font-size: 24px;
     color: #53dacb;
     letter-spacing: 0.01em;
 
@@ -288,6 +294,30 @@ h1 {
 
   to {
     transform: translateX(-50%);
+  }
+}
+
+@keyframes arrow-swap-1 {
+  0%,
+  49.99% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes arrow-swap-2 {
+  0%,
+  49.99% {
+    opacity: 0;
+  }
+
+  50%,
+  100% {
+    opacity: 1;
   }
 }
 
@@ -349,9 +379,8 @@ h1 {
   }
 
   .dot-arrow {
-    width: 24px;
-    height: 24px;
-    font-size: 11px;
+    width: 30px;
+    height: 48px;
   }
 
   .mail {

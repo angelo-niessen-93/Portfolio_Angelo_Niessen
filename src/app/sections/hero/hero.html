@@ -7,13 +7,20 @@
       <h1>Angelo Niessen</h1>
 
       <div class="btn-group hero-actions">
-        <a class="btn" href="#projects">{{ 'HERO.CHECK_WORK' | translate }}</a>
-        <a class="btn" href="#contact">{{ 'HERO.CONTACT_ME' | translate }}</a>
+        <a class="btn" href="#projects" [attr.data-label]="'HERO.CHECK_WORK' | translate">{{
+          'HERO.CHECK_WORK' | translate
+        }}</a>
+        <a class="btn" href="#contact" [attr.data-label]="'HERO.CONTACT_ME' | translate">{{
+          'HERO.CONTACT_ME' | translate
+        }}</a>
       </div>
     </div>
 
     <div class="left-rail" aria-hidden="true">
-      <span class="dot-arrow">&darr;</span>
+      <span class="dot-arrow">
+        <img class="arrow-frame arrow-1" src="/icons/arrow1.png" alt="" />
+        <img class="arrow-frame arrow-2" src="/icons/arrow2.png" alt="" />
+      </span>
       <span class="line"></span>
     </div>
 
@@ -26,7 +33,7 @@
         </span>
       </a>
       <div class="socials">
-        <a class="github-link" href="https://github.com/angelo-niessen-93" aria-label="GitHub">
+        <a class="github-link" href="https://github.com/angelo-niessen-93" target="_blank" rel="noopener" aria-label="GitHub">
           <img class="github-default" src="/icons/GitHub.png" alt="" aria-hidden="true" />
           <img class="github-hover" src="/icons/GitHub Hover.png" alt="" aria-hidden="true" />
         </a>

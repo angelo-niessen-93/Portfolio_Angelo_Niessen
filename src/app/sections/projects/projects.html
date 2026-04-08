@@ -65,7 +65,13 @@
 
             <div class="modal-actions">
               @if (selectedProject.githubUrl) {
-                <a class="btn" [href]="selectedProject.githubUrl" target="_blank" rel="noopener">
+                <a
+                  class="btn"
+                  [href]="selectedProject.githubUrl"
+                  target="_blank"
+                  rel="noopener"
+                  [attr.data-label]="'PROJECTS.GITHUB' | translate"
+                >
                   {{ 'PROJECTS.GITHUB' | translate }} &nearr;
                 </a>
               } @else if (selectedProject.id === 'join') {
@@ -74,7 +80,13 @@
                 </span>
               }
               @if (selectedProject.liveUrl) {
-                <a class="btn" [href]="selectedProject.liveUrl" target="_blank" rel="noopener">
+                <a
+                  class="btn"
+                  [href]="selectedProject.liveUrl"
+                  target="_blank"
+                  rel="noopener"
+                  [attr.data-label]="'PROJECTS.LIVE_TEST' | translate"
+                >
                   {{ 'PROJECTS.LIVE_TEST' | translate }} &nearr;
                 </a>
               } @else if (selectedProject.id === 'join') {

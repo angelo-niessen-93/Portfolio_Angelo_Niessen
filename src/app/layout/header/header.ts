@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -12,9 +12,11 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 export class HeaderComponent {
   menuOpen = false;
   currentLanguage = 'de';
+  activeSection: 'about' | 'skills' | 'projects' | '' = '';
 
   constructor(private readonly translate: TranslateService) {
     this.currentLanguage = this.translate.currentLang || this.translate.defaultLang || 'de';
+    this.syncActiveSectionFromHash();
   }
 
   toggleMenu(): void {
@@ -29,5 +31,19 @@ export class HeaderComponent {
     this.translate.use(lang);
     this.currentLanguage = lang;
     localStorage.setItem('lang', lang);
+  }
+
+  setActiveSection(section: 'about' | 'skills' | 'projects'): void {
+    this.activeSection = section;
+  }
+
+  @HostListener('window:hashchange')
+  onHashChange(): void {
+    this.syncActiveSectionFromHash();
+  }
+
+  private syncActiveSectionFromHash(): void {
+    const hash = typeof window !== 'undefined' ? window.location.hash.replace('#', '') : '';
+    this.activeSection = hash === 'about' || hash === 'skills' || hash === 'projects' ? hash : '';
   }
 }

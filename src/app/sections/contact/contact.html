@@ -52,7 +52,12 @@
         <p class="error-message">{{ errorMessage }}</p>
       }
 
-      <button class="btn send-btn" type="submit" [disabled]="contactForm.invalid || isSubmitting">
+      <button
+        class="btn send-btn"
+        type="submit"
+        [disabled]="contactForm.invalid || isSubmitting"
+        [attr.data-label]="isSubmitting ? ('CONTACT.FORM.SENDING' | translate) : ('CONTACT.FORM.SUBMIT' | translate)"
+      >
         {{ isSubmitting ? ('CONTACT.FORM.SENDING' | translate) : ('CONTACT.FORM.SUBMIT' | translate) }}
       </button>
     </form>

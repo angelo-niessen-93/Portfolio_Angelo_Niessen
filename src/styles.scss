@@ -9,6 +9,7 @@
 
 html,
 body {
+  scroll-behavior: smooth;
   margin: 0;
   padding: 0;
   background: $color-bg-app;
@@ -22,13 +23,13 @@ h3,
 h4,
 h5,
 h6,
-.section-label,
 .btn {
   font-family: $font-display;
 }
 
 .section-label {
   margin: 0 0 16px;
+  font-family: $font-base;
   color: $color-accent;
   font-size: 24px;
   line-height: 1;
@@ -77,7 +78,8 @@ a {
   color: $color-text-primary;
   background: $color-btn-bg;
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 18px;
+  overflow: hidden;
   transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 
   @include hover-focus {
@@ -87,9 +89,58 @@ a {
   }
 }
 
+.btn[data-label]:not(.is-disabled) {
+  position: relative;
+}
+
+.btn[data-label]:not(.is-disabled)::before,
+.btn[data-label]:not(.is-disabled)::after {
+  content: attr(data-label);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  color: $color-accent;
+}
+
+.btn[data-label]:not(.is-disabled):hover,
+.btn[data-label]:not(.is-disabled):focus-visible {
+  color: transparent;
+}
+
+.btn[data-label]:not(.is-disabled):hover::before,
+.btn[data-label]:not(.is-disabled):hover::after,
+.btn[data-label]:not(.is-disabled):focus-visible::before,
+.btn[data-label]:not(.is-disabled):focus-visible::after {
+  opacity: 1;
+}
+
+.btn[data-label]:not(.is-disabled):hover::before,
+.btn[data-label]:not(.is-disabled):focus-visible::before {
+  animation: btn-marquee 4.8s linear infinite;
+}
+
+.btn[data-label]:not(.is-disabled):hover::after,
+.btn[data-label]:not(.is-disabled):focus-visible::after {
+  animation: btn-marquee 4.8s linear infinite;
+  animation-delay: -2.4s;
+}
+
+@keyframes btn-marquee {
+  from {
+    transform: translate(120%, -50%);
+  }
+
+  to {
+    transform: translate(-120%, -50%);
+  }
+}
+
 @include respond-md {
   .section-label {
-    font-size: 30px;
+    font-size: 24px;
     margin-bottom: 12px;
   }
 
@@ -106,6 +157,7 @@ a {
   .btn {
     min-width: 124px;
     min-height: 40px;
-    font-size: 0.78rem;
+    font-size: 18px;
   }
 }
+
