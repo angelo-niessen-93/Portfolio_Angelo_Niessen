@@ -91,6 +91,16 @@ export class Projects {
     this.selectedProjectId = null;
   }
 
+  openNextProject(): void {
+    if (!this.projects.length) {
+      return;
+    }
+
+    const currentIndex = this.projects.findIndex((project) => project.id === this.selectedProjectId);
+    const nextIndex = currentIndex === -1 ? 0 : (currentIndex + 1) % this.projects.length;
+    this.selectedProjectId = this.projects[nextIndex].id;
+  }
+
   get selectedProject(): ProjectItem | null {
     return this.projects.find((project) => project.id === this.selectedProjectId) ?? null;
   }

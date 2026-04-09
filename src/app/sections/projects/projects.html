@@ -101,6 +101,11 @@
             <img [src]="selectedProject.image" [alt]="selectedProject.name + ' detail preview'" />
           </div>
         </div>
+
+        <button class="modal-next" type="button" (click)="openNextProject()">
+          {{ 'PROJECTS.NEXT_PROJECT' | translate }}
+          <span class="modal-next-icon material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+        </button>
       </article>
     </div>
   }
