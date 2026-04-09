@@ -38,9 +38,9 @@ export class Projects {
       githubUrl: 'https://github.com/angelo-niessen-93/MoonberryTales',
       liveUrl: 'https://angeloniessen.dev/MoonberryTales/',
       techBadges: [
-        { icon: '/icons/JavaScript.png', label: 'JavaScript' },
+        { icon: '/icons/Javascript.png', label: 'JavaScript' },
         { icon: '/icons/HTML.png', label: 'HTML' },
-        { icon: '/icons/HTML.png', label: 'CSS' },
+        { icon: '/icons/CSS.png', label: 'CSS' },
       ],
     },
     {
@@ -53,8 +53,7 @@ export class Projects {
       githubUrl: 'https://github.com/angelo-niessen-93/pokedex-test',
       liveUrl: 'https://angeloniessen.dev/pokedex/',
       techBadges: [
-        { icon: '/icons/JavaScript.png', label: 'JavaScript' },
-        { icon: '/icons/Rest-Api.png', label: 'REST API' },
+        { icon: '/icons/Javascript.png', label: 'JavaScript' },
         { icon: '/icons/HTML.png', label: 'HTML' },
         { icon: '/icons/CSS.png', label: 'CSS' },
       ],
@@ -70,6 +69,8 @@ export class Projects {
         { icon: '/icons/Angular.png', label: 'Angular' },
         { icon: '/icons/TypeScript.png', label: 'TypeScript' },
         { icon: '/icons/Firebase.png', label: 'Firebase' },
+        { icon: '/icons/CSS.png', label: 'CSS' },
+        { icon: '/icons/HTML.png', label: 'HTML' },
       ],
     },
   ];

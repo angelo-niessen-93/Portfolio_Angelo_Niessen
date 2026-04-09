@@ -18,7 +18,7 @@
             <h3>
               {{ project.name }}
               @if (activeProjectId === project.id) {
-                <span class="arrow">&nearr;</span>
+                <img class="arrow" src="/icons/arrow.png" alt="Arrow" />
               }
             </h3>
             <p>{{ project.tech }}</p>
@@ -72,7 +72,7 @@
                   rel="noopener"
                   [attr.data-label]="'PROJECTS.GITHUB' | translate"
                 >
-                  {{ 'PROJECTS.GITHUB' | translate }} &nearr;
+                  {{ 'PROJECTS.GITHUB' | translate }} <img src="/icons/arrow_projects.png" alt="">
                 </a>
               } @else if (selectedProject.id === 'join') {
                 <span class="btn is-disabled" aria-disabled="true">
@@ -87,7 +87,7 @@
                   rel="noopener"
                   [attr.data-label]="'PROJECTS.LIVE_TEST' | translate"
                 >
-                  {{ 'PROJECTS.LIVE_TEST' | translate }} &nearr;
+                  {{ 'PROJECTS.LIVE_TEST' | translate }} <img src="/icons/arrow_projects.png" alt="">
                 </a>
               } @else if (selectedProject.id === 'join') {
                 <span class="btn is-disabled" aria-disabled="true">
