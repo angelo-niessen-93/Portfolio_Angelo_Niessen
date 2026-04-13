@@ -129,13 +129,13 @@ a {
 
 .btn[data-label]:not(.is-disabled):hover::before,
 .btn[data-label]:not(.is-disabled):focus-visible::before {
-  animation: btn-marquee 4.8s linear infinite;
+  animation: btn-marquee var(--marquee-dur, 4.8s) linear infinite;
 }
 
 .btn[data-label]:not(.is-disabled):hover::after,
 .btn[data-label]:not(.is-disabled):focus-visible::after {
-  animation: btn-marquee 4.8s linear infinite;
-  animation-delay: -2.4s;
+  animation: btn-marquee var(--marquee-dur, 4.8s) linear infinite;
+  animation-delay: var(--marquee-delay, -2.4s);
 }
 
 @keyframes btn-marquee {
