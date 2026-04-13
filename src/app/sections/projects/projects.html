@@ -21,7 +21,14 @@
                 <img class="arrow" src="/icons/arrow.png" alt="Arrow" />
               }
             </h3>
-            <p>{{ project.tech }}</p>
+            <p>
+              @for (techPart of project.tech.split(' | '); track $index) {
+                <span class="tech-item">{{ techPart }}</span>
+                @if (!$last) {
+                  <span class="tech-separator">|</span>
+                }
+              }
+            </p>
           </article>
         }
       </div>
@@ -44,7 +51,8 @@
     <div class="project-modal-backdrop" (click)="closeProject()">
       <article class="project-modal" (click)="$event.stopPropagation()">
         <button class="modal-close" type="button" (click)="closeProject()" [attr.aria-label]="'PROJECTS.CLOSE_DIALOG' | translate">
-          &times;
+          <img class="close-icon close-icon-default" src="/icons/close.png" alt="" aria-hidden="true" />
+          <img class="close-icon close-icon-hover" src="/icons/close_hover.png" alt="" aria-hidden="true" />
         </button>
 
         <div class="modal-content">

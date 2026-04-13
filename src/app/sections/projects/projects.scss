@@ -67,6 +67,15 @@
     font-size: 18px;
     line-height: 1.2;
     text-align: right;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+
+  .tech-separator {
+    color: #3dcfb6;
   }
 }
 
@@ -158,10 +167,39 @@
   top: 16px;
   border: 0;
   background: transparent;
-  color: #e2e8e8;
-  font-size: 52px;
-  line-height: 1;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  display: grid;
+  place-items: center;
   cursor: pointer;
+
+  .close-icon {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    transition: opacity 0.2s ease;
+  }
+
+  .close-icon-default {
+    opacity: 1;
+  }
+
+  .close-icon-hover {
+    opacity: 0;
+  }
+
+  &:hover,
+  &:focus-visible {
+    .close-icon-default {
+      opacity: 0;
+    }
+
+    .close-icon-hover {
+      opacity: 1;
+    }
+  }
 }
 
 .modal-content {
@@ -204,7 +242,7 @@
 }
 
 .modal-badges {
-  margin-top: 18px;
+  margin-top: 38px;
   display: flex;
   flex-wrap: wrap;
   gap: 14px 20px;
@@ -226,7 +264,7 @@
 }
 
 .modal-actions {
-  margin-top: 28px;
+  margin-top: 50px;
   display: flex;
   gap: 16px;
 
@@ -283,7 +321,6 @@
 
 .modal-next {
   align-self: flex-end;
-  margin-top: 28px;
   display: flex;
   align-items: center;
   font-family: "Karla", sans-serif;
