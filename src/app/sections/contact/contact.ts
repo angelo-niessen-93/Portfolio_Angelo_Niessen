@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
@@ -15,7 +15,7 @@ export class Contact {
   private readonly fb = inject(FormBuilder);
   private readonly http = inject(HttpClient);
   private readonly translate = inject(TranslateService);
-  
+
   isSubmitting = false;
   successMessage: string | null = null;
   errorMessage: string | null = null;
@@ -49,7 +49,7 @@ export class Contact {
         this.isSubmitting = false;
         this.successMessage = this.translate.instant('CONTACT.SUCCESS');
         this.contactForm.reset();
-        
+
         setTimeout(() => {
           this.successMessage = null;
         }, 5000);
@@ -57,12 +57,86 @@ export class Contact {
       error: (error: HttpErrorResponse) => {
         this.isSubmitting = false;
         this.errorMessage = this.getErrorMessage(error);
-        
+
         setTimeout(() => {
           this.errorMessage = null;
         }, 5000);
       },
     });
+  }
+
+  isFieldInvalid(field: 'name' | 'email' | 'message'): boolean {
+    const control = this.contactForm.get(field);
+    return !!control && this.hasInteracted(control) && control.invalid;
+  }
+
+  isFieldValid(field: 'name' | 'email' | 'message'): boolean {
+    const control = this.contactForm.get(field);
+    return !!control && this.hasInteracted(control) && control.valid;
+  }
+
+  getFieldFeedbackKey(field: 'name' | 'email' | 'message'): string | null {
+    const control = this.contactForm.get(field);
+    const base = this.getFieldFeedbackBase(field);
+
+    if (!control || !this.hasInteracted(control)) {
+      return null;
+    }
+
+    if (control.hasError('required')) {
+      return `${base}.REQUIRED`;
+    }
+
+    if (control.hasError('email')) {
+      return `${base}.INVALID`;
+    }
+
+    if (control.hasError('minlength')) {
+      return `${base}.MIN_LENGTH`;
+    }
+
+    return `${base}.VALID`;
+  }
+
+  isPrivacyInvalid(): boolean {
+    const control = this.contactForm.get('privacy');
+    return !!control && this.hasInteracted(control) && control.invalid;
+  }
+
+  isPrivacyValid(): boolean {
+    const control = this.contactForm.get('privacy');
+    return !!control && this.hasInteracted(control) && control.valid;
+  }
+
+  getPrivacyFeedbackKey(): string | null {
+    const control = this.contactForm.get('privacy');
+    const base = 'CONTACT.FORM.FEEDBACK.PRIVACY';
+
+    if (!control || !this.hasInteracted(control)) {
+      return null;
+    }
+
+    if (control.hasError('required') || control.hasError('requiredTrue')) {
+      return `${base}.REQUIRED`;
+    }
+
+    return `${base}.VALID`;
+  }
+
+  private hasInteracted(control: AbstractControl): boolean {
+    return control.touched || control.dirty;
+  }
+
+  private getFieldFeedbackBase(field: 'name' | 'email' | 'message'): string {
+    switch (field) {
+      case 'name':
+        return 'CONTACT.FORM.FEEDBACK.NAME';
+      case 'email':
+        return 'CONTACT.FORM.FEEDBACK.EMAIL';
+      case 'message':
+      default:
+        return 'CONTACT.FORM.FEEDBACK.MESSAGE';
+    }
   }
 
   private getErrorMessage(error: HttpErrorResponse): string {
@@ -85,5 +159,4 @@ export class Contact {
 
     return this.translate.instant('CONTACT.ERROR.GENERIC');
   }
-
 }

@@ -1,11 +1,12 @@
 import { NgIf } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgIf, TranslatePipe],
+  imports: [NgIf, RouterLink, TranslatePipe],
   templateUrl: './header.html',
   styleUrls: ['./header.scss'],
 })

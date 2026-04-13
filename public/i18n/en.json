@@ -79,7 +79,28 @@
       "PRIVACY_LINK": "privacy policy",
       "PRIVACY_SUFFIX": "and agree to the processing of my data as outlined.",
       "SENDING": "Sending...",
-      "SUBMIT": "Say Hello ;)"
+      "SUBMIT": "Say Hello ;)",
+      "FEEDBACK": {
+        "NAME": {
+          "REQUIRED": "Please enter your name.",
+          "MIN_LENGTH": "Your name should be at least 2 characters long.",
+          "VALID": "Looks great."
+        },
+        "EMAIL": {
+          "REQUIRED": "Please enter your email address.",
+          "INVALID": "Please enter a valid email address.",
+          "VALID": "Perfect, I can reach you there."
+        },
+        "MESSAGE": {
+          "REQUIRED": "Please write a message.",
+          "MIN_LENGTH": "Your message should be at least 3 characters long.",
+          "VALID": "Thanks, your message is clear."
+        },
+        "PRIVACY": {
+          "REQUIRED": "You must agree to the privacy policy to send your message.",
+          "VALID": "Thanks, your consent is recorded."
+        }
+      }
     },
     "SUCCESS": "Email sent successfully! I'll get back to you soon.",
     "ERROR": {

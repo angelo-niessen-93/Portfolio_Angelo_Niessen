@@ -47,11 +47,15 @@
     color: #c9d6d5;
     font-size: 18px;
     line-height: 1.4;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   a {
     color: $color-accent;
     text-decoration: none;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 }
 

@@ -79,7 +79,28 @@
       "PRIVACY_LINK": "Datenschutzerklärung",
       "PRIVACY_SUFFIX": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
       "SENDING": "Wird gesendet...",
-      "SUBMIT": "Sag Hallo ;)"
+      "SUBMIT": "Sag Hallo ;)",
+      "FEEDBACK": {
+        "NAME": {
+          "REQUIRED": "Bitte gib deinen Namen ein.",
+          "MIN_LENGTH": "Dein Name sollte mindestens 2 Zeichen lang sein.",
+          "VALID": "Sieht gut aus."
+        },
+        "EMAIL": {
+          "REQUIRED": "Bitte gib deine E-Mail-Adresse ein.",
+          "INVALID": "Bitte gib eine gültige E-Mail-Adresse ein.",
+          "VALID": "Perfekt, so kann ich dich erreichen."
+        },
+        "MESSAGE": {
+          "REQUIRED": "Bitte schreibe eine Nachricht.",
+          "MIN_LENGTH": "Deine Nachricht sollte mindestens 3 Zeichen lang sein.",
+          "VALID": "Danke, deine Nachricht ist verständlich."
+        },
+        "PRIVACY": {
+          "REQUIRED": "Du musst der Datenschutzerklärung zustimmen, um die Nachricht zu senden.",
+          "VALID": "Danke, deine Zustimmung ist gespeichert."
+        }
+      }
     },
     "SUCCESS": "E-Mail erfolgreich gesendet! Ich melde mich bald bei dir.",
     "ERROR": {

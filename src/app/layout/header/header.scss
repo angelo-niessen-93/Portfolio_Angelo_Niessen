@@ -163,8 +163,13 @@
   }
 
   .logo-link {
+    width: 42px;
+    overflow: hidden;
+
     img {
       height: 74px;
+      max-width: none;
+      object-position: left center;
     }
   }
 
@@ -176,7 +181,7 @@
     position: absolute;
     top: 74px;
     right: 14px;
-    width: min(240px, calc(100vw - 28px));
+    width: min(176px, calc(100vw - 28px));
     border-radius: 26px;
     border: 1px solid rgba(61, 207, 182, 0.8);
     background:
@@ -207,5 +212,87 @@
 
   .mobile-lang {
     justify-self: start;
+  }
+}
+
+@media (max-width: 420px) {
+  .header-inner {
+    height: 62px;
+    padding: 0 10px;
+    gap: 10px;
+  }
+
+  .logo-link {
+    width: 36px;
+
+    img {
+      height: 58px;
+    }
+  }
+
+  .mobile-menu-toggle {
+    width: 36px;
+    height: 36px;
+    gap: 5px;
+
+    span {
+      width: 22px;
+    }
+  }
+
+  .mobile-menu {
+    top: 62px;
+    right: 10px;
+    width: min(156px, calc(100vw - 20px));
+    border-radius: 20px;
+    padding: 18px 18px 14px;
+    gap: 16px;
+  }
+
+  .mobile-nav {
+    gap: 14px;
+
+    a {
+      font-size: 24px;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .header-inner {
+    height: 58px;
+    padding: 0 8px;
+  }
+
+  .logo-link {
+    width: 32px;
+
+    img {
+      height: 52px;
+    }
+  }
+
+  .mobile-menu {
+    top: 58px;
+    right: 8px;
+    width: 120px;
+    border-radius: 16px;
+    padding: 14px 12px 12px;
+    gap: 12px;
+  }
+
+  .mobile-nav {
+    gap: 12px;
+
+    a {
+      font-size: 20px;
+    }
+  }
+
+  .lang-switch {
+    .lang {
+      padding: 4px 8px;
+      font-size: 10px;
+    }
   }
 }

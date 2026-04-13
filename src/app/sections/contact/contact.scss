@@ -50,9 +50,8 @@ h3 {
   color: #c7d3d2;
   font-size: 16px;
 
-  a {
+  .cta-link-text {
     color: #3dcfb6;
-    text-decoration: none;
     font-weight: 700;
     font-size: 16px;
   }
@@ -68,9 +67,26 @@ h3 {
   gap: 10px;
   padding: 24px 0 26px;
   border-top: 1px solid rgba(61, 207, 182, 0.72);
+  transition: border-color 0.2s ease;
 
   &:last-of-type {
     border-bottom: 1px solid rgba(61, 207, 182, 0.72);
+  }
+
+  &.is-error {
+    border-top-color: rgba(255, 95, 109, 0.9);
+
+    &:last-of-type {
+      border-bottom-color: rgba(255, 95, 109, 0.9);
+    }
+  }
+
+  &.is-success {
+    border-top-color: rgba(83, 218, 203, 0.9);
+
+    &:last-of-type {
+      border-bottom-color: rgba(83, 218, 203, 0.9);
+    }
   }
 
   span {
@@ -102,6 +118,22 @@ h3 {
   textarea {
     resize: none;
     min-height: 44px;
+  }
+}
+
+.field-feedback {
+  margin: 2px 0 0;
+  font-size: 14px;
+  line-height: 1.3;
+  color: #9ba7a8;
+  transition: color 0.2s ease;
+
+  &.is-error {
+    color: #ff7f8b;
+  }
+
+  &.is-success {
+    color: #53dacb;
   }
 }
 
@@ -180,6 +212,32 @@ h3 {
       border-bottom-color: #53dacb;
     }
   }
+
+  &.is-error input {
+    border-color: #ff7f8b;
+    box-shadow: 0 0 0 2px rgba(255, 127, 139, 0.16);
+  }
+
+  &.is-success input {
+    border-color: #53dacb;
+    box-shadow: 0 0 0 2px rgba(83, 218, 203, 0.16);
+  }
+}
+
+.privacy-feedback {
+  margin: 10px 0 0 34px;
+  font-size: 14px;
+  line-height: 1.3;
+  color: #9ba7a8;
+  transition: color 0.2s ease;
+
+  &.is-error {
+    color: #ff7f8b;
+  }
+
+  &.is-success {
+    color: #53dacb;
+  }
 }
 
 .send-btn {
@@ -187,6 +245,7 @@ h3 {
   margin-top: 34px;
   min-width: 172px;
   min-height: 50px;
+  cursor: pointer;
   font-size: 18px;
   line-height: 1;
   color: #aab3b4;
@@ -277,6 +336,11 @@ h3 {
       font-size: 14px;
       line-height: 1.35;
     }
+  }
+
+  .field-feedback,
+  .privacy-feedback {
+    font-size: 13px;
   }
 }
 
@@ -401,6 +465,10 @@ h3 {
     }
   }
 
+  .privacy-feedback {
+    margin-left: 28px;
+  }
+
   .send-btn {
     margin-top: 24px;
     font-size: 18px;
@@ -467,6 +535,15 @@ h3 {
     }
   }
 
+  .field-feedback,
+  .privacy-feedback {
+    font-size: 12px;
+  }
+
+  .privacy-feedback {
+    margin-left: 27px;
+  }
+
   .send-btn {
     font-size: 16px;
     min-height: 38px;
@@ -531,10 +608,18 @@ h3 {
     }
   }
 
+  .field-feedback,
+  .privacy-feedback {
+    font-size: 11px;
+  }
+
+  .privacy-feedback {
+    margin-left: 24px;
+  }
+
   .send-btn {
     min-width: 128px;
     min-height: 36px;
     font-size: 15px;
   }
 }
-

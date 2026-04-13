@@ -3,8 +3,11 @@
 }
 
 .hero {
+  --header-height: 70px;
   width: 100%;
-  min-height: 900px;
+  min-height: 100vh;
+  height: 100vh;
+  height: 100dvh;
   position: relative;
   overflow: hidden;
   background:
@@ -28,8 +31,9 @@
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 64px 28px 146px;
-  min-height: calc(900px - 110px);
+  padding: clamp(20px, 6vh, 64px) 28px clamp(88px, 18vh, 146px);
+  min-height: calc(100vh - var(--header-height));
+  min-height: calc(100dvh - var(--header-height));
   display: grid;
   place-items: center;
   position: relative;
@@ -102,11 +106,13 @@ h1 {
 
 .line {
   width: 1px;
-  height: 122px;
+  height: 186px;
   background: rgba(88, 200, 182, 0.5);
 }
 
 .right-rail {
+  --social-icon-size: 32px;
+  --social-rail-width: 52px;
   right: 28px;
   display: flex;
   flex-direction: column;
@@ -114,7 +120,15 @@ h1 {
   gap: 14px;
 }
 
+.right-rail .line {
+  align-self: flex-start;
+  margin-left: calc((var(--social-icon-size) - 1px) / 2);
+}
+
 .mail {
+  width: var(--social-rail-width);
+  display: inline-flex;
+  justify-content: center;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   color: #d6e3e4;
@@ -131,22 +145,27 @@ h1 {
 
 .mail-icon {
   display: none;
+  width: auto;
   height: 24px;
-  object-fit: contain;
+  object-fit: none;
 }
 
 .mail-icon-wrap {
   display: none;
   position: relative;
-  width: 24px;
+  width: 40px;
   height: 24px;
+  overflow: visible;
 }
 
 .mail-icon-wrap .mail-icon {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   display: block;
+  width: auto;
   height: 100%;
+  object-fit: none;
   transition: opacity 0.2s ease;
 }
 
@@ -155,14 +174,16 @@ h1 {
 }
 
 .socials {
+  width: var(--social-rail-width);
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
 }
 
 .github-link {
   position: relative;
-  width: 32px;
+  width: 52px;
   height: 32px;
   display: inline-block;
   line-height: 0;
@@ -177,9 +198,11 @@ h1 {
 
   img {
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: auto;
     height: 100%;
-    object-fit: contain;
+    object-fit: none;
     display: block;
     transition: opacity 0.2s ease;
   }
@@ -197,7 +220,7 @@ h1 {
 
 .linkedin-link {
   position: relative;
-  width: 32px;
+  width: 52px;
   height: 32px;
   display: inline-block;
   line-height: 0;
@@ -212,9 +235,11 @@ h1 {
 
   img {
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: auto;
     height: 100%;
-    object-fit: contain;
+    object-fit: none;
     display: block;
     transition: opacity 0.2s ease;
   }
@@ -245,6 +270,7 @@ h1 {
   right: -20px;
   bottom: 42px;
   height: 50px;
+  min-height: 24px;
   overflow: hidden;
   background: rgba(103, 109, 114, 0.52);
   border-top: 1px solid rgba(255, 255, 255, 0.07);
@@ -260,7 +286,7 @@ h1 {
   align-items: center;
   width: max-content;
   white-space: nowrap;
-  animation: ticker-slide 60s linear infinite;
+  animation: ticker-slide 32s linear infinite;
 
   p {
     margin: 0;
@@ -321,26 +347,63 @@ h1 {
   }
 }
 
+@media (max-width: 1200px) and (min-width: 769px) {
+  .hero-content {
+    padding: clamp(18px, 5vh, 46px) 22px clamp(82px, 16vh, 130px);
+  }
+
+  .hero-main {
+    width: min(100%, 860px);
+    padding-inline: 56px;
+  }
+
+  .role {
+    font-size: clamp(1.8rem, 3.5vw, 2.1rem);
+    letter-spacing: 0.03em;
+  }
+
+  h1 {
+    margin-top: 10px;
+    font-size: clamp(64px, 8.6vw, 102px);
+    line-height: 0.96;
+    white-space: normal;
+    text-wrap: balance;
+  }
+
+  .hero-actions {
+    margin-top: 24px;
+    gap: 14px;
+
+    .btn {
+      min-width: 124px;
+      min-height: 42px;
+      font-size: 16px;
+      padding-inline: 16px;
+    }
+  }
+
+  .left-rail {
+    left: 16px;
+  }
+
+  .right-rail {
+    right: 16px;
+  }
+}
+
 @media (max-width: 1024px) {
   .hero-content {
     padding-top: 36px;
-  }
-
-  .ticker-track {
-    p {
-      font-size: 1.2rem;
-    }
   }
 }
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 760px;
+    --header-height: 70px;
   }
 
   .hero-content {
-    min-height: calc(760px - 90px);
-    padding: 24px 14px 116px;
+    padding: 24px 14px 104px;
   }
 
   .hero-main {
@@ -374,7 +437,9 @@ h1 {
   }
 
   .right-rail {
-    right: 10px;
+    --social-icon-size: 28px;
+    --social-rail-width: 46px;
+    right: 18px;
     gap: 10px;
   }
 
@@ -386,6 +451,10 @@ h1 {
   .mail {
     writing-mode: initial;
     transform: none;
+    width: 46px;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
     font-size: 0;
     line-height: 0;
     letter-spacing: 0;
@@ -401,6 +470,8 @@ h1 {
 
   .mail-icon-wrap {
     display: block;
+    width: 46px;
+    height: 28px;
   }
 
   .mail:hover .mail-hover,
@@ -418,12 +489,12 @@ h1 {
   }
 
   .github-link {
-    width: 28px;
+    width: 46px;
     height: 28px;
   }
 
   .linkedin-link {
-    width: 28px;
+    width: 46px;
     height: 28px;
   }
 
@@ -435,7 +506,6 @@ h1 {
 
   .ticker-track {
     p {
-      font-size: 0.96rem;
       gap: 10px;
       padding: 0 12px;
     }
@@ -444,16 +514,13 @@ h1 {
 
 @media (max-width: 560px) {
   .hero {
-    min-height: 680px;
-
     &::after {
       height: 110px;
     }
   }
 
   .hero-content {
-    min-height: calc(680px - 82px);
-    padding: 18px 14px 100px;
+    padding: 18px 14px 92px;
   }
 
   .hero-actions {
@@ -480,7 +547,6 @@ h1 {
 
   .ticker-track {
     p {
-      font-size: 0.84rem;
       gap: 8px;
       padding: 0 12px;
     }
@@ -491,12 +557,20 @@ h1 {
     bottom: 56px;
   }
 
+  .right-rail {
+    right: 16px;
+  }
+
   .line {
     height: 64px;
   }
 }
 
 @media (max-width: 400px) {
+  .hero {
+    --header-height: 62px;
+  }
+
   .role {
     font-size: 1rem;
     letter-spacing: 0.02em;
@@ -512,7 +586,6 @@ h1 {
 
   .ticker-track {
     p {
-      font-size: 0.76rem;
       gap: 6px;
       padding: 0 10px;
     }
@@ -525,6 +598,86 @@ h1 {
       min-width: 122px;
       padding-inline: 14px;
       font-size: 0.74rem;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .hero {
+    --header-height: 58px;
+  }
+
+  .hero-content {
+    padding: 12px 8px 78px;
+  }
+
+  .role {
+    font-size: 0.9rem;
+  }
+
+  h1 {
+    font-size: clamp(28px, 10.4vw, 34px);
+    line-height: 0.95;
+  }
+
+  .hero-actions {
+    gap: 6px;
+
+    .btn {
+      min-width: 114px;
+      min-height: 36px;
+      font-size: 0.7rem;
+      padding-inline: 12px;
+    }
+  }
+
+  .left-rail,
+  .right-rail {
+    bottom: 50px;
+  }
+
+  .left-rail {
+    left: 6px;
+  }
+
+  .right-rail {
+    right: 12px;
+    --social-icon-size: 24px;
+    --social-rail-width: 40px;
+  }
+
+  .mail {
+    width: 40px;
+  }
+
+  .mail-icon-wrap {
+    width: 40px;
+    height: 24px;
+  }
+
+  .github-link,
+  .linkedin-link {
+    width: 40px;
+    height: 24px;
+  }
+
+  .line {
+    height: 56px;
+  }
+
+  .ticker-wrap {
+    left: -4px;
+    right: -4px;
+    bottom: 16px;
+    height: 28px;
+    min-height: 24px;
+    transform: rotate(-1.4deg);
+  }
+
+  .ticker-track {
+    p {
+      gap: 6px;
+      padding: 0 8px;
     }
   }
 }

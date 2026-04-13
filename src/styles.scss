@@ -12,9 +12,17 @@ body {
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   background: $color-bg-app;
   color: $color-text-base;
   font-family: $font-base;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
 }
 
 h1,
@@ -158,6 +166,15 @@ a {
     min-width: 124px;
     min-height: 40px;
     font-size: 18px;
+  }
+}
+
+@media (max-width: 320px) {
+  .btn {
+    min-width: 108px;
+    min-height: 36px;
+    padding: 0 14px;
+    font-size: 14px;
   }
 }
 

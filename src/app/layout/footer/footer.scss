@@ -96,13 +96,36 @@
   gap: 10px;
 
   a {
+    position: relative;
+    display: inline-block;
+    padding-left: 12px;
     color: $color-link-light;
     text-decoration: none;
     font-size: 16px;
     line-height: 1.2;
+    transition: color 0.2s ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: $color-accent;
+      transform: translateY(-50%) scale(0.6);
+      opacity: 0;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
 
     @include hover-focus {
       color: $color-accent;
+
+      &::before {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+      }
     }
   }
 }
@@ -110,7 +133,7 @@
 @include respond-md {
   .footer-inner {
     min-height: 0;
-    grid-template-columns: minmax(170px, 1fr) auto;
+    grid-template-columns: minmax(140px, 1fr) auto;
     grid-template-areas:
       "brand links"
       "role links"
@@ -118,22 +141,25 @@
       "copy copy";
     align-items: start;
     justify-items: start;
-    padding: 32px 30px 20px;
-    gap: 10px 28px;
+    padding: 24px 20px 18px;
+    gap: 8px 22px;
   }
 
   .brand-link {
     grid-area: brand;
     width: 100%;
-    max-width: 230px;
-    margin-bottom: 8px;
-    overflow: hidden;
+    max-width: 180px;
+    margin-bottom: 6px;
+    overflow: visible;
+    position: relative;
+    z-index: 2;
 
     img {
-      width: calc(100% + 56px);
+      width: 100%;
       height: auto;
-      max-width: none;
-      margin-left: -10px;
+      max-width: 100%;
+      margin-left: -49px;
+      transform: translateY(-12px);
     }
   }
 
@@ -159,20 +185,22 @@
     grid-area: links;
     align-self: start;
     justify-self: end;
-    margin-top: 49px;
-    gap: 14px;
+    margin-top: 10px;
+    gap: 8px;
+    width: min(40vw, 170px);
 
     a {
-      font-size: 18px;
+      font-size: 16px;
       line-height: 1.15;
-      white-space: nowrap;
+      white-space: normal;
+      overflow-wrap: anywhere;
     }
   }
 
   .footer-copy {
     grid-area: copy;
     justify-self: center;
-    margin-top: 20px;
+    margin-top: 14px;
     font-size: 18px;
     line-height: 1.1;
     text-align: center;
@@ -181,17 +209,12 @@
 
 @media (max-width: 520px) {
   .footer-inner {
-    padding: 26px 20px 18px;
-    gap: 12px 20px;
+    padding: 22px 16px 16px;
+    gap: 8px 16px;
   }
 
   .brand-link {
-    max-width: 210px;
-
-    img {
-      width: calc(100% + 46px);
-      margin-left: 10px;
-    }
+    max-width: 168px;
   }
 
   .footer-role,
@@ -201,7 +224,8 @@
   }
 
   .footer-links {
-    gap: 10px;
+    gap: 8px;
+    width: min(42vw, 160px);
 
     a {
       font-size: 16px;
@@ -216,17 +240,16 @@
 
 @media (max-width: 400px) {
   .footer-inner {
-    padding: 24px 14px 16px;
-    gap: 10px 14px;
+    padding: 20px 12px 14px;
+    gap: 8px 12px;
   }
 
   .brand-link {
-    max-width: 180px;
+    max-width: 150px;
 
     img {
-      width: calc(100% + 40px);
-      transform: translate(-20px, -2px);
-      margin-left: -35px;
+      margin-left: -37px;
+      transform: translateY(-25px);
     }
   }
 
@@ -246,4 +269,3 @@
     font-size: 15px;
   }
 }
-

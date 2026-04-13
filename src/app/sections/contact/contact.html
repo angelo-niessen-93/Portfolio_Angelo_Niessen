@@ -8,30 +8,45 @@
       <p class="lead">
         {{ 'CONTACT.LEAD' | translate }}
       </p>
-      <p class="cta-line">{{ 'CONTACT.CTA_LINE' | translate }} <a href="mailto:contact@angeloniessen.dev">{{ 'CONTACT.CTA_LINK' | translate }}</a></p>
+      <p class="cta-line">{{ 'CONTACT.CTA_LINE' | translate }} <span class="cta-link-text">{{ 'CONTACT.CTA_LINK' | translate }}</span></p>
     </div>
 
     <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="submitContact()" novalidate>
-      <label class="field">
+      <label class="field" [class.is-error]="isFieldInvalid('name')" [class.is-success]="isFieldValid('name')">
         <span>{{ 'CONTACT.FORM.NAME_LABEL' | translate }}</span>
         <input type="text" formControlName="name" [placeholder]="'CONTACT.FORM.NAME_PLACEHOLDER' | translate" />
+        @if (getFieldFeedbackKey('name'); as feedbackKey) {
+          <p class="field-feedback" [class.is-error]="isFieldInvalid('name')" [class.is-success]="isFieldValid('name')">
+            {{ feedbackKey | translate }}
+          </p>
+        }
       </label>
 
-      <label class="field">
+      <label class="field" [class.is-error]="isFieldInvalid('email')" [class.is-success]="isFieldValid('email')">
         <span>{{ 'CONTACT.FORM.EMAIL_LABEL' | translate }}</span>
         <input type="email" formControlName="email" [placeholder]="'CONTACT.FORM.EMAIL_PLACEHOLDER' | translate" />
+        @if (getFieldFeedbackKey('email'); as feedbackKey) {
+          <p class="field-feedback" [class.is-error]="isFieldInvalid('email')" [class.is-success]="isFieldValid('email')">
+            {{ feedbackKey | translate }}
+          </p>
+        }
       </label>
 
-      <label class="field">
+      <label class="field" [class.is-error]="isFieldInvalid('message')" [class.is-success]="isFieldValid('message')">
         <span>{{ 'CONTACT.FORM.MESSAGE_LABEL' | translate }}</span>
         <textarea
           formControlName="message"
           rows="2"
           [placeholder]="'CONTACT.FORM.MESSAGE_PLACEHOLDER' | translate"
         ></textarea>
+        @if (getFieldFeedbackKey('message'); as feedbackKey) {
+          <p class="field-feedback" [class.is-error]="isFieldInvalid('message')" [class.is-success]="isFieldValid('message')">
+            {{ feedbackKey | translate }}
+          </p>
+        }
       </label>
 
-      <div class="privacy">
+      <div class="privacy" [class.is-error]="isPrivacyInvalid()" [class.is-success]="isPrivacyValid()">
         <input
           id="privacy-consent"
           type="checkbox"
@@ -44,6 +59,11 @@
           {{ 'CONTACT.FORM.PRIVACY_SUFFIX' | translate }}
         </p>
       </div>
+      @if (getPrivacyFeedbackKey(); as privacyFeedbackKey) {
+        <p class="privacy-feedback" [class.is-error]="isPrivacyInvalid()" [class.is-success]="isPrivacyValid()">
+          {{ privacyFeedbackKey | translate }}
+        </p>
+      }
 
       @if (successMessage) {
         <p class="success-message">{{ successMessage }}</p>
