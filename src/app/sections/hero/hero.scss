@@ -64,6 +64,10 @@ h1 {
 
 .hero-actions {
   margin-top: 30px;
+
+  .btn {
+    white-space: nowrap;
+  }
 }
 
 .left-rail,
@@ -366,8 +370,7 @@ h1 {
     margin-top: 10px;
     font-size: clamp(64px, 8.6vw, 102px);
     line-height: 0.96;
-    white-space: normal;
-    text-wrap: balance;
+    white-space: nowrap;
   }
 
   .hero-actions {
@@ -407,8 +410,9 @@ h1 {
   }
 
   .hero-main {
-    width: 100%;
+    width: min(100%, calc(100% - 112px));
     max-width: 520px;
+    margin-inline: auto;
   }
 
   .role {
@@ -419,6 +423,8 @@ h1 {
     margin-top: 8px;
     font-size: clamp(38px, 10.6vw, 72px);
     line-height: 0.94;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
   .hero-actions {
@@ -523,6 +529,10 @@ h1 {
     padding: 18px 14px 92px;
   }
 
+  .hero-main {
+    width: min(100%, calc(100% - 88px));
+  }
+
   .hero-actions {
     flex-direction: row;
     align-items: center;
@@ -572,12 +582,13 @@ h1 {
   }
 
   .role {
-    font-size: 1rem;
+    font-size: 24px;
     letter-spacing: 0.02em;
   }
 
   h1 {
-    font-size: clamp(32px, 10.8vw, 46px);
+    font-size: 41px;
+    line-height: 0.98;
   }
 
   .hero-content {
@@ -596,8 +607,35 @@ h1 {
 
     .btn {
       min-width: 122px;
-      padding-inline: 14px;
-      font-size: 0.74rem;
+      padding-inline: 18px;
+      font-size: 14px;
+    }
+  }
+}
+
+@media (min-width: 321px) and (max-width: 370px) {
+  .hero-main {
+    width: 100%;
+    max-width: 100%;
+    padding-inline: 10px;
+  }
+
+  .role {
+    font-size: clamp(20px, 6vw, 22px);
+  }
+
+  h1 {
+    font-size: clamp(34px, 10vw, 38px);
+    line-height: 0.96;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-actions {
+    .btn {
+      min-width: 112px;
+      font-size: 16px;
+      padding-inline: 12px;
     }
   }
 }
@@ -611,23 +649,33 @@ h1 {
     padding: 12px 8px 78px;
   }
 
+  .hero-main {
+    width: min(100%, calc(100% - 72px));
+  }
+
   .role {
-    font-size: 0.9rem;
+    font-size: 0.82rem;
   }
 
   h1 {
-    font-size: clamp(28px, 10.4vw, 34px);
-    line-height: 0.95;
+    font-size: 34px;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
   .hero-actions {
-    gap: 6px;
+    flex-direction: column;
+    align-items: center;
 
     .btn {
-      min-width: 114px;
+      width: min(100%, 220px);
+      min-width: 0;
       min-height: 36px;
-      font-size: 0.7rem;
-      padding-inline: 12px;
+      font-size: 12px;
+      line-height: 1.1;
+      white-space: normal;
+      text-align: center;
+      padding-inline: 10px;
     }
   }
 
@@ -644,6 +692,7 @@ h1 {
     right: 12px;
     --social-icon-size: 24px;
     --social-rail-width: 40px;
+    width: 34px;
   }
 
   .mail {
@@ -651,7 +700,7 @@ h1 {
   }
 
   .mail-icon-wrap {
-    width: 40px;
+    width: 39px;
     height: 24px;
   }
 

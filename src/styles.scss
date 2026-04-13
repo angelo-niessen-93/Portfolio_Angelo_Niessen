@@ -51,6 +51,8 @@ section {
     color: $color-accent;
     font-size: 64px;
     line-height: 0.92;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 }
 
@@ -148,13 +150,13 @@ a {
 
 @include respond-md {
   .section-label {
-    font-size: 24px;
+    font-size: 18px;
     margin-bottom: 12px;
   }
 
   section {
     h2 {
-      font-size: clamp(2.2rem, 13vw, 3.4rem);
+      font-size: 56px;
     }
   }
 
@@ -174,7 +176,6 @@ a {
     min-width: 108px;
     min-height: 36px;
     padding: 0 14px;
-    font-size: 14px;
+    font-size: 18px;
   }
 }
-

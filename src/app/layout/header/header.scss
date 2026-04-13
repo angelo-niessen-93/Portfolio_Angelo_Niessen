@@ -154,6 +154,7 @@
 
 @include respond-md {
   .header-inner {
+    height: 70px;
     min-height: 0;
     padding: 0 14px;
   }
@@ -163,7 +164,7 @@
   }
 
   .logo-link {
-    width: 42px;
+    width: 44px;
     overflow: hidden;
 
     img {
@@ -181,22 +182,26 @@
     position: absolute;
     top: 74px;
     right: 14px;
-    width: min(176px, calc(100vw - 28px));
+    width: min(210px, calc(100vw - 28px));
+    max-height: calc(100dvh - 88px);
     border-radius: 26px;
     border: 1px solid rgba(61, 207, 182, 0.8);
     background:
       radial-gradient(circle at 82% 18%, rgba(4, 104, 88, 0.44) 0%, rgba(0, 0, 0, 0) 52%),
       linear-gradient(170deg, #1a1c1f 0%, #0f1519 42%, #06443b 100%);
-    padding: 28px 28px 20px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    padding: 22px 20px 16px;
     display: grid;
     justify-items: start;
-    gap: 24px;
+    gap: 18px;
+    overflow-y: auto;
     z-index: 30;
   }
 
   .mobile-nav {
     display: grid;
-    gap: 18px;
+    gap: 14px;
 
     a {
       color: #d7dfde;
@@ -223,7 +228,7 @@
   }
 
   .logo-link {
-    width: 36px;
+    width: 38px;
 
     img {
       height: 58px;
@@ -243,14 +248,15 @@
   .mobile-menu {
     top: 62px;
     right: 10px;
-    width: min(156px, calc(100vw - 20px));
+    width: min(180px, calc(100vw - 20px));
+    max-height: calc(100dvh - 74px);
     border-radius: 20px;
-    padding: 18px 18px 14px;
-    gap: 16px;
+    padding: 18px 16px 14px;
+    gap: 14px;
   }
 
   .mobile-nav {
-    gap: 14px;
+    gap: 12px;
 
     a {
       font-size: 24px;
@@ -262,6 +268,7 @@
   .header-inner {
     height: 58px;
     padding: 0 8px;
+    gap: 8px;
   }
 
   .logo-link {
@@ -275,14 +282,15 @@
   .mobile-menu {
     top: 58px;
     right: 8px;
-    width: 120px;
+    width: min(166px, calc(100vw - 16px));
+    max-height: calc(100dvh - 66px);
     border-radius: 16px;
     padding: 14px 12px 12px;
-    gap: 12px;
+    gap: 10px;
   }
 
   .mobile-nav {
-    gap: 12px;
+    gap: 10px;
 
     a {
       font-size: 20px;

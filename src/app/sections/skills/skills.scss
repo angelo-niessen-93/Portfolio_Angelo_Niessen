@@ -128,7 +128,7 @@
   }
 
   .skills-grid {
-    grid-template-columns: repeat(4, minmax(70px, 1fr));
+    grid-template-columns: repeat(3, minmax(70px, 1fr));
     gap: 22px 14px;
   }
 }
@@ -147,15 +147,15 @@
 
   .skills-text,
   .skills-subtext {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .skills-cta-text {
-    font-size: 28px;
+    font-size: 20px;
   }
 
   .skills-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 22px 12px;
   }
 }

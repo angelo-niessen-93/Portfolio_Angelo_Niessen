@@ -16,7 +16,6 @@
 
 .section-inner {
   padding: 86px 28px;
-  display: grid;
   grid-template-columns: minmax(520px, 1fr) minmax(280px, 360px);
   gap: 56px;
   align-items: start;
@@ -167,39 +166,10 @@
   top: 16px;
   border: 0;
   background: transparent;
-  width: 48px;
-  height: 48px;
-  padding: 0;
-  display: grid;
-  place-items: center;
+  color: #e2e8e8;
+  font-size: 52px;
+  line-height: 1;
   cursor: pointer;
-
-  .close-icon {
-    position: absolute;
-    width: 48px;
-    height: 48px;
-    object-fit: contain;
-    transition: opacity 0.2s ease;
-  }
-
-  .close-icon-default {
-    opacity: 1;
-  }
-
-  .close-icon-hover {
-    opacity: 0;
-  }
-
-  &:hover,
-  &:focus-visible {
-    .close-icon-default {
-      opacity: 0;
-    }
-
-    .close-icon-hover {
-      opacity: 1;
-    }
-  }
 }
 
 .modal-content {
