@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 
 type ProjectItem = {
@@ -26,6 +26,10 @@ type ProjectItem = {
 export class Projects {
   activeProjectId: string | null = null;
   selectedProjectId: string | null = null;
+  previewTop = 0;
+
+  @ViewChild('projectsPreview') private projectsPreviewRef?: ElementRef<HTMLElement>;
+  @ViewChild('previewFrame') private previewFrameRef?: ElementRef<HTMLElement>;
 
   readonly projects: ProjectItem[] = [
     {
@@ -75,8 +79,13 @@ export class Projects {
     },
   ];
 
-  setActiveProject(projectId: string): void {
+  setActiveProject(projectId: string, event?: MouseEvent): void {
     this.activeProjectId = projectId;
+
+    const rowElement = event?.currentTarget;
+    if (rowElement instanceof HTMLElement) {
+      this.updatePreviewPosition(rowElement);
+    }
   }
 
   clearActiveProject(): void {
@@ -103,5 +112,22 @@ export class Projects {
 
   get selectedProject(): ProjectItem | null {
     return this.projects.find((project) => project.id === this.selectedProjectId) ?? null;
+  }
+
+  private updatePreviewPosition(rowElement: HTMLElement): void {
+    const previewColumn = this.projectsPreviewRef?.nativeElement;
+    const previewFrame = this.previewFrameRef?.nativeElement;
+
+    if (!previewColumn || !previewFrame) {
+      return;
+    }
+
+    const rowRect = rowElement.getBoundingClientRect();
+    const columnRect = previewColumn.getBoundingClientRect();
+    const previewHeight = previewFrame.offsetHeight;
+    const targetTop = rowRect.top - columnRect.top + rowRect.height / 2 - previewHeight / 2;
+    const maxTop = Math.max(0, previewColumn.clientHeight - previewHeight);
+
+    this.previewTop = Math.max(0, Math.min(targetTop, maxTop));
   }
 }

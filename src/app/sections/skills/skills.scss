@@ -5,7 +5,7 @@
 }
 
 .section {
-  overflow-x: hidden;
+
   background:
     radial-gradient(circle at 18% 82%, rgba(11, 64, 58, 0.32) 0%, rgba(0, 0, 0, 0) 38%),
     linear-gradient(100deg, #11171a 0%, #12181c 55%, #131a1d 100%);
@@ -133,7 +133,7 @@
   }
 }
 
-@include respond-md {
+@include respond-max(800px) {
   .section-inner {
     grid-template-columns: 1fr;
     gap: 28px;

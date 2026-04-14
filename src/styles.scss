@@ -12,7 +12,6 @@ body {
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
   background: $color-bg-app;
   color: $color-text-base;
   font-family: $font-base;
@@ -135,7 +134,7 @@ a {
 .btn[data-label]:not(.is-disabled):hover::after,
 .btn[data-label]:not(.is-disabled):focus-visible::after {
   animation: btn-marquee var(--marquee-dur, 4.8s) linear infinite;
-  animation-delay: var(--marquee-delay, -2.4s);
+  animation-delay: calc(var(--marquee-dur, 4.8s) / -2);
 }
 
 @keyframes btn-marquee {
